@@ -15,11 +15,11 @@ struct StefanblosWebsite: Website {
 
     // Update these properties to configure your website:
     var url = URL(string: "https://your-website-url.com")!
-    var name = "StefanblosWebsite"
-    var description = "A description of StefanblosWebsite"
+    var name = "Stefan Blos"
+    var description = "A description of my site"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
 
 // This will generate your website using the built-in Foundation theme:
-try StefanblosWebsite().publish(withTheme: .foundation)
+try StefanblosWebsite().publish(withTheme: .myTheme)
