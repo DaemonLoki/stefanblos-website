@@ -6,6 +6,7 @@
 //
 import Publish
 import Plot
+import Foundation
 
 public extension Theme {
     /// Custom "MyTheme" to individualize the site-
@@ -183,6 +184,10 @@ private extension Node where Context == HTML.BodyContext {
     }
     
     static func itemList<T: Website>(for items: [Item<T>], on site: T) -> Node {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        
         return .ul(
             .class("item-list"),
             .forEach(items) { item in
@@ -191,6 +196,7 @@ private extension Node where Context == HTML.BodyContext {
                         .href(item.path),
                         .text(item.title)
                         )),
+                    .p(.class("item-date"), .text("Published: \(dateFormatter.string(from: item.date))")),
                     .tagList(for: item, on: site),
                     .p(.text(item.description))
                     ))

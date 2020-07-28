@@ -46,7 +46,7 @@ body {
 
 .hero-section h3 {
     font-weight: 300;
-    color: #bebebe;
+    color: gray;
 }
 
 .hero-section p {
@@ -140,8 +140,17 @@ a {
     margin-bottom: 15px;
     font-size: 1.3em;
 }
+    
+.item-list a {
+    text-decoration: none;
+}
+    
+.item-date {
+    color: gray;
+    margin-bottom: 8px;
+}
 
-.item-list p {
+.item-list p:last-child {
     margin-bottom: 0;
 }
 
