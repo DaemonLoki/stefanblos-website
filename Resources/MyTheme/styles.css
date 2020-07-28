@@ -18,6 +18,25 @@ body {
     padding: 40px;
     text-align: left;
 }
+    
+.hero-section h1 {
+    margin-bottom: 10px;
+}
+
+.hero-section h2 {
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.hero-section h3 {
+    color: #bebebe;
+}
+
+.hero-section p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 header {
     background-color: #eee;

@@ -18,6 +18,15 @@ public extension Theme {
 }
 
 private struct MyHTMLFactory<Site: Website>: HTMLFactory {
+    
+    func makeHeroSection() -> Node<HTML.BodyContext> {
+        return .div(.class("hero-section"),
+                    .h3(.text("Hello, I'm")),
+                    .h1(.text("Stefan Blos")),
+                    .h2(.text("Software Engineer")),
+                    .p(.text("\"I’m a passionate iOS / ML / mobile developer who loves to experiment and write about tech.\"")))
+    }
+    
     func makeIndexHTML(for index: Index,
                        context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -26,7 +35,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
-                    .h1(.text(index.title)),
+                    .heroSection,
                     .p(
                         .class("description"),
                         .text(context.site.description)
@@ -44,7 +53,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
-
+    
     func makeSectionHTML(for section: Section<Site>,
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -60,7 +69,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
-
+    
     func makeItemHTML(for item: Item<Site>,
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -83,7 +92,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
-
+    
     func makePageHTML(for page: Page,
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -96,7 +105,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
-
+    
     func makeTagListHTML(for page: TagListPage,
                          context: PublishingContext<Site>) throws -> HTML? {
         HTML(
@@ -123,7 +132,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
-
+    
     func makeTagDetailsHTML(for page: TagDetailsPage,
                             context: PublishingContext<Site>) throws -> HTML? {
         HTML(
@@ -160,13 +169,13 @@ private extension Node where Context == HTML.BodyContext {
     static func wrapper(_ nodes: Node...) -> Node {
         .div(.class("wrapper"), .group(nodes))
     }
-
+    
     static func header<T: Website>(
         for context: PublishingContext<T>,
         selectedSection: T.SectionID?
     ) -> Node {
         let sectionIDs = T.SectionID.allCases
-
+        
         return .header(
             .wrapper(
                 .a(.class("site-name"), .href("/"), .text(context.site.name)),
@@ -177,14 +186,14 @@ private extension Node where Context == HTML.BodyContext {
                                 .class(section == selectedSection ? "selected" : ""),
                                 .href(context.sections[section].path),
                                 .text(context.sections[section].title)
-                            ))
-                        })
+                                ))
+                            })
                     )
                 )
             )
         )
     }
-
+    
     static func itemList<T: Website>(for items: [Item<T>], on site: T) -> Node {
         return .ul(
             .class("item-list"),
@@ -193,23 +202,23 @@ private extension Node where Context == HTML.BodyContext {
                     .h1(.a(
                         .href(item.path),
                         .text(item.title)
-                    )),
+                        )),
                     .tagList(for: item, on: site),
                     .p(.text(item.description))
-                ))
+                    ))
             }
         )
     }
-
+    
     static func tagList<T: Website>(for item: Item<T>, on site: T) -> Node {
         return .ul(.class("tag-list"), .forEach(item.tags) { tag in
             .li(.a(
                 .href(site.path(for: tag)),
                 .text(tag.string)
-            ))
-        })
+                ))
+            })
     }
-
+    
     static func footer<T: Website>(for site: T) -> Node {
         return .footer(
             .p(
@@ -222,7 +231,7 @@ private extension Node where Context == HTML.BodyContext {
             .p(.a(
                 .text("RSS feed"),
                 .href("/feed.rss")
-            ))
+                ))
         )
     }
 }
