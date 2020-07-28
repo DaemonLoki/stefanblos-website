@@ -111,13 +111,25 @@ a {
 .description {
     margin-bottom: 40px;
 }
+    
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
 
 .item-list > li {
     display: block;
     padding: 20px;
     border-radius: 20px;
     background-color: #eee;
-    margin-bottom: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+    
+.item-list > li:hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
 }
 
 .item-list > li:last-child {
