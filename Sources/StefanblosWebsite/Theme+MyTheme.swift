@@ -19,14 +19,6 @@ public extension Theme {
 
 private struct MyHTMLFactory<Site: Website>: HTMLFactory {
     
-    func makeHeroSection() -> Node<HTML.BodyContext> {
-        return .div(.class("hero-section"),
-                    .h3(.text("Hello, I'm")),
-                    .h1(.text("Stefan Blos")),
-                    .h2(.text("Software Engineer")),
-                    .p(.text("\"I’m a passionate iOS / ML / mobile developer who loves to experiment and write about tech.\"")))
-    }
-    
     func makeIndexHTML(for index: Index,
                        context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -36,11 +28,7 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
                 .header(for: context, selectedSection: nil),
                 .wrapper(
                     .heroSection,
-                    .p(
-                        .class("description"),
-                        .text(context.site.description)
-                    ),
-                    .h2("Latest content"),
+                    .h2("Latest posts"),
                     .itemList(
                         for: context.allItems(
                             sortedBy: \.date,

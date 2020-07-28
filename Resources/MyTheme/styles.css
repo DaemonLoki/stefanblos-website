@@ -19,6 +19,21 @@ body {
     text-align: left;
 }
     
+.hero-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+    
+.hero-section img {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    
 .hero-section h1 {
     margin-bottom: 10px;
 }
@@ -30,12 +45,16 @@ body {
 }
 
 .hero-section h3 {
+    font-weight: 300;
     color: #bebebe;
 }
 
 .hero-section p {
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
 }
 
 header {
@@ -172,6 +191,10 @@ footer {
 
     header {
         background-color: #000;
+    }
+    
+    .hero-section img {
+        border-color: black;
     }
 }
 
