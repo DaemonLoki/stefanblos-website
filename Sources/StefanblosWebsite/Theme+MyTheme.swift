@@ -196,7 +196,7 @@ private extension Node where Context == HTML.BodyContext {
                         .href(item.path),
                         .text(item.title)
                         )),
-                    .p(.class("item-date"), .text("Published: \(dateFormatter.string(from: item.date))")),
+                    .dateTime(for: item.date, className: "item-date"),
                     .tagList(for: item, on: site),
                     .p(.text(item.description))
                     ))

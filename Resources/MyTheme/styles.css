@@ -146,6 +146,7 @@ a {
 }
     
 .item-date {
+    display: block;
     color: gray;
     margin-bottom: 8px;
 }
