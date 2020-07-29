@@ -44,17 +44,21 @@ body {
     margin-top: 0;
 }
 
-.hero-section h3 {
-    font-weight: 300;
-    color: gray;
+.hero-section .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.hero-section p {
-    margin-top: 20px;
+.hero-section .intro-text {
+    font-size: medium;
+
     margin-bottom: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align: center;
+}
+
+.hero-section .intro-quote {
+    margin-top: 20px;
+    color: #999ea2;
 }
 
 header {
@@ -147,7 +151,7 @@ a {
     
 .item-date {
     display: block;
-    color: gray;
+    color: #999ea2;
     margin-bottom: 8px;
 }
 
