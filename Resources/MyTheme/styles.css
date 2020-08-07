@@ -52,7 +52,7 @@ body {
 
 .hero-section .intro-text {
     font-size: medium;
-
+    text-transform: uppercase;
     margin-bottom: 20px;
 }
 
@@ -183,6 +183,29 @@ a {
 }
 
 .content {
+    margin-bottom: 40px;
+}
+
+.content > * {
+    line-height: 160%;
+    width: 80ch;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.content ul {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.content li {
+    margin-bottom: 10px;
+}
+
+.content code {
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 

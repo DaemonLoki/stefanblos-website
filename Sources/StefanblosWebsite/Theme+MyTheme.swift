@@ -184,22 +184,20 @@ private extension Node where Context == HTML.BodyContext {
     }
     
     static func itemList<T: Website>(for items: [Item<T>], on site: T) -> Node {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-        
         return .ul(
             .class("item-list"),
             .forEach(items) { item in
                 .li(.article(
-                    .h1(.a(
+                    .a(
                         .href(item.path),
-                        .text(item.title)
-                        )),
-                    .dateTime(for: item.date, className: "item-date"),
-                    .tagList(for: item, on: site),
-                    .p(.text(item.description))
-                    ))
+                        .div(
+                            .h1(
+                                .text(item.title)
+                            ),
+                            .dateTime(for: item.date, className: "item-date"),
+                            .tagList(for: item, on: site),
+                            .p(.text(item.description))
+                        ))))
             }
         )
     }
