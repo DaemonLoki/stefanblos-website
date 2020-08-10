@@ -10,13 +10,19 @@
 }
 
 @font-face {
+    font-family: Montserrat-Bold;
+    src: url(/fonts/Montserrat-Bold.ttf) format("truetype");
+    font-weight: black;
+}
+
+@font-face {
     font-family: Poppins;
     src: url(/fonts/Poppins-Regular.ttf) format("truetype");
 }
 
 body {
     background: #EDF2EF;
-    color: #d1d646;
+    color: #000;
     font-family: Poppins;
     text-align: center;
 }
@@ -95,8 +101,8 @@ header a {
 
 header .site-name {
     font-size: 1.5em;
-    color: #000;
-    font-weight: bold;
+    color: #d1d646;
+    font-family: Montserrat-Bold;
 }
 
 nav {
@@ -247,11 +253,7 @@ footer {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #292f36;
-    }
-
-    body,
-    header .site-name {
-        color: #ddd;
+        color: #fff
     }
 
     .item-list > li {
@@ -259,7 +261,7 @@ footer {
     }
 
     header {
-        background-color: #000;
+        background-color: #292f36;
     }
     
     .hero-section img {

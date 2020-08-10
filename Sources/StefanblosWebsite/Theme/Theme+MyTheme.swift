@@ -19,7 +19,7 @@ public extension Theme {
     }
 }
 
-private struct MyHTMLFactory<Site: Website>: HTMLFactory {
+struct MyHTMLFactory<Site: Website>: HTMLFactory {
     
     func makeIndexHTML(for index: Index,
                        context: PublishingContext<Site>) throws -> HTML {
@@ -155,33 +155,9 @@ private struct MyHTMLFactory<Site: Website>: HTMLFactory {
     }
 }
 
-private extension Node where Context == HTML.BodyContext {
+extension Node where Context == HTML.BodyContext {
     static func wrapper(_ nodes: Node...) -> Node {
         .div(.class("wrapper"), .group(nodes))
-    }
-    
-    static func header<T: Website>(
-        for context: PublishingContext<T>,
-        selectedSection: T.SectionID?
-    ) -> Node {
-        let sectionIDs = T.SectionID.allCases
-        
-        return .header(
-            .wrapper(
-                .a(.class("site-name"), .href("/"), .text(context.site.name)),
-                .if(sectionIDs.count > 1,
-                    .nav(
-                        .ul(.forEach(sectionIDs) { section in
-                            .li(.a(
-                                .class(section == selectedSection ? "selected" : ""),
-                                .href(context.sections[section].path),
-                                .text(context.sections[section].title)
-                                ))
-                            })
-                    )
-                )
-            )
-        )
     }
     
     static func itemList<T: Website>(for items: [Item<T>], on site: T) -> Node {
