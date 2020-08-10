@@ -13,7 +13,8 @@ public extension Theme {
     static var myTheme: Self {
         Theme(
             htmlFactory: MyHTMLFactory(),
-            resourcePaths: ["Resources/MyTheme/styles.css"]
+            resourcePaths: ["Resources/MyTheme/styles.css",
+            "Resources/MyTheme/themeColors.css"]
         )
     }
 }
