@@ -160,25 +160,6 @@ extension Node where Context == HTML.BodyContext {
         .div(.class("wrapper"), .group(nodes))
     }
     
-    static func itemList<T: Website>(for items: [Item<T>], on site: T) -> Node {
-        return .ul(
-            .class("item-list"),
-            .forEach(items) { item in
-                .li(.article(
-                    .a(
-                        .href(item.path),
-                        .div(
-                            .h1(
-                                .text(item.title)
-                            ),
-                            .dateTime(for: item.date, className: "item-date"),
-                            .tagList(for: item, on: site),
-                            .p(.text(item.description))
-                        ))))
-            }
-        )
-    }
-    
     static func tagList<T: Website>(for item: Item<T>, on site: T) -> Node {
         return .ul(.class("tag-list"), .forEach(item.tags) { tag in
             .li(.a(
