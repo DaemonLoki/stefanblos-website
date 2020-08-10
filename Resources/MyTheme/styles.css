@@ -70,9 +70,9 @@ header a {
 
 header .site-name {
     font-size: 1.5em;
-    color: #d1d646;
+    color: #15B097;
     font-family: Montserrat-Bold;
-    border-bottom: 5px solid #d1d646;
+    border-bottom: 5px solid #15B097;
     display: inline-block;
     margin-bottom: 20px;
 }
@@ -85,7 +85,14 @@ header .site-name {
     }
     
     header .site-name {
-        margin-bottom: 00px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    header .site-name {
+        color: #d1d646;
+        border-bottom: 5px solid #d1d646;
     }
 }
 
@@ -106,7 +113,13 @@ nav li {
 }
 
 nav li a.selected {
-    color: #d1d646;
+    color: #15B097;
+}
+
+@media (prefers-color-scheme: dark) {
+    nav li a.selected {
+        color: #d1d646;
+    }
 }
 
 
@@ -117,16 +130,6 @@ nav li a.selected {
 .hero-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-}
-    
-.hero-section img {
-    width: 200px;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
     
 .hero-section h1 {
@@ -145,15 +148,47 @@ nav li a.selected {
     justify-content: center;
 }
 
+.hero-section .text-container h1 {
+    font-family: Montserrat-Bold;
+    font-size: xxx-large;
+}
+
 .hero-section .intro-text {
     font-size: medium;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
+.hero-section .intro-text::before {
+        display: inline-block;
+        content: "";
+        width: 4rem;
+        height: 0.25rem;
+        margin-right: 1rem;
+        transform: translateY(-0.2rem);
+        background-color: #000;
+    }
+}
+
 .hero-section .intro-quote {
     margin-top: 20px;
-    color: #999ea2;
+}
+
+.hero-section img {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    //-webkit-mask: url(images/image-mask.svg);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-section .intro-text::before {
+        background-color: #fff;
+    }
 }
 
 /**
@@ -176,6 +211,20 @@ p {
 a {
     color: inherit;
 }
+
+.highlight-text {
+    color: #15B097;
+}
+
+@media (prefers-color-scheme: dark) {
+    .highlight-text {
+        color: #d1d646;
+    }
+}
+
+/**
+ Other
+ */
 
 .description {
     margin-bottom: 40px;
