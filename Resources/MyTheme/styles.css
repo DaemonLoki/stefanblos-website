@@ -4,11 +4,29 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/fonts/Poppins-Regular.ttf) format("truetype");
+}
+
 body {
-    background: #fff;
-    color: #000;
-    font-family: Helvetica, Arial;
+    background: #EDF2EF;
+    color: #d1d646;
+    font-family: Poppins;
     text-align: center;
+}
+
+body p {
+    font-family: Poppins;
+}
+
+body h1, h2, h3, h4, h5 {
+    font-family: Montserrat;
 }
 
 .wrapper {
@@ -228,7 +246,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #222;
+        background-color: #292f36;
     }
 
     body,
