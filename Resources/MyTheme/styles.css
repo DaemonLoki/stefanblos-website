@@ -52,6 +52,65 @@ body h1, h2, h3, h4, h5 {
 }
 
 /**
+ Header
+ */
+
+header {
+    background-color: #EDF2EF;
+}
+
+header .wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .site-name {
+    font-size: 1.5em;
+    color: #d1d646;
+    font-family: Montserrat-Bold;
+    border-bottom: 5px solid #d1d646;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    header .wrapper {
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+    
+    header .site-name {
+        margin-bottom: 00px;
+    }
+}
+
+/**
+ Nav
+ */
+
+nav {
+    flex: 1;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 7px;
+    line-height: 1.5em;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+nav li a.selected {
+    color: #d1d646;
+}
+
+
+/**
  Hero
  */
     
@@ -98,46 +157,8 @@ body h1, h2, h3, h4, h5 {
 }
 
 /**
- Header
+ Typography
  */
-
-header {
-    background-color: #EDF2EF;
-}
-
-header .wrapper {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-}
-
-header a {
-    text-decoration: none;
-}
-
-header .site-name {
-    font-size: 1.5em;
-    color: #d1d646;
-    font-family: Montserrat-Bold;
-}
-
-nav {
-    flex: 1;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 7px;
-    line-height: 1.5em;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-nav li a.selected {
-    color: #d1d646;
-}
 
 h1 {
     margin-bottom: 20px;
