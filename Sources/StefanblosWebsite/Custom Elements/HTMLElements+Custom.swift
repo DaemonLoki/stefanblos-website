@@ -17,7 +17,6 @@ public extension Node where Context: HTML.BodyContext {
     static func dateTime(for date: Date, className: String?) -> Node {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        formatter.timeStyle = .short
         
         print(formatter.string(from: date))
         if let className = className {

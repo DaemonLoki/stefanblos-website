@@ -16,8 +16,8 @@ extension Node where Context == HTML.BodyContext {
             .forEach(items) { item in
                 .li(.article(
                     createContent(for: item, on: site)
-                )
-            )}
+                    )
+                )}
         )
     }
     
@@ -25,12 +25,14 @@ extension Node where Context == HTML.BodyContext {
         return .a(
             .href(item.path),
             .div(
-                .h1(
+                .h1(.class("item-headline"),
                     .text(item.title)
                 ),
-                .dateTime(for: item.date, className: "item-date"),
-                .tagList(for: item, on: site),
-                .p(.text(item.description))
+                .p(.text(item.description)),
+                .div(.class("bottom-container"),
+                     .tagList(for: item, on: site),
+                     .dateTime(for: item.date, className: "item-date")
+                )
             )
         )
     }
