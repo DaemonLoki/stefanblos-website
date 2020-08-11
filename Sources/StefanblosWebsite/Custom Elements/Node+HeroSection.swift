@@ -15,7 +15,7 @@ public extension Node where Context: HTML.BodyContext {
                   .p(.class("intro-text"), .text("Hello".uppercased())),
                   .h1(.text("I'm "), .span(.class("highlight-text"), "Stefan"), .text(" Blos")),
                 .p(.class("intro-quote"), .text("He's a passionate iOS / ML / mobile developer who loves to experiment and write about tech."))),
-             .img(.src("/images/hero.jpg"), .alt("Hero Image"))
+             .div(.class("hero-image"))
         )
     }
 }
