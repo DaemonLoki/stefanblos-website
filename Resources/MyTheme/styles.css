@@ -77,7 +77,7 @@ body h1, h2, h3, h4, h5 {
  */
 
 header {
-    background-color: #EDF2EF;
+    background-color: var(--light-background);
 }
 
 header .wrapper {
@@ -111,6 +111,10 @@ header .site-name {
 }
 
 @media (prefers-color-scheme: dark) {
+    header {
+        background-color: var(--dark-background);
+    }
+    
     header .site-name {
         color: var(--dark-accent-color);
         border-bottom: 5px solid var(--dark-accent-color);
@@ -363,10 +367,6 @@ a {
     color: var(--accent-color);
 }
 
-.item-page .tag-list {
-    display: inline-block;
-}
-
 @media (prefers-color-scheme: dark) {
     .tag-list a,
     .tag a {
@@ -375,8 +375,12 @@ a {
 }
 
 /**
- Rest
+ Item Page
  */
+
+.item-page .tag-list {
+    display: inline-block;
+}
 
 .content {
     margin-bottom: 40px;
@@ -411,14 +415,12 @@ a {
     padding: 6px 10px;
 }
 
+/**
+ Footer
+ */
+
 footer {
     color: #8a8a8a;
-}
-
-@media (prefers-color-scheme: dark) {
-    header {
-        background-color: #292f36;
-    }
 }
 
 @media(max-width: 768px) {
