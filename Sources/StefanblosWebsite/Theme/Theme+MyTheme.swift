@@ -69,14 +69,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                 .class("item-page"),
                 .header(for: context, selectedSection: item.sectionID),
                 .wrapper(
-                    .article(
-                        .div(
-                            .class("content"),
-                            .contentBody(item.body)
-                        ),
-                        .span("Tagged with: "),
-                        .tagList(for: item, on: context.site)
-                    )
+                    .itemHtml(for: item, context: context)
                 ),
                 .footer(for: context.site)
             )
