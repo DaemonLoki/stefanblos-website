@@ -185,6 +185,16 @@ nav li a.selected {
     //-webkit-mask: url(images/image-mask.svg);
 }
 
+@media (max-width: 768px) {
+    
+    .hero-section {
+        display: block;
+    }
+    
+    .hero-section img {
+        display: none
+    }
+
 @media (prefers-color-scheme: dark) {
     .hero-section .intro-text::before {
         background-color: #fff;
