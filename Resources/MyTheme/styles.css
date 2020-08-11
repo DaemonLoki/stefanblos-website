@@ -186,14 +186,14 @@ nav li a.selected {
 }
 
 @media (max-width: 768px) {
-    
     .hero-section {
         display: block;
     }
     
     .hero-section img {
-        display: none
+        display: none;
     }
+}
 
 @media (prefers-color-scheme: dark) {
     .hero-section .intro-text::before {
