@@ -22,7 +22,7 @@ public extension Node where Context: HTML.BodyContext {
         if let className = className {
             return .time(.class(className), .attribute(named: "datetime", value: formatter.string(from: date)), .text("\(formatter.string(from: date))"))
         }
-        return .time(.attribute(named: "datetime", value: formatter.string(from: date)), .text("Published: \(formatter.string(from: date))"))
+        return .time(.attribute(named: "datetime", value: formatter.string(from: date)), .text("\(formatter.string(from: date))"))
     }
     
 }
