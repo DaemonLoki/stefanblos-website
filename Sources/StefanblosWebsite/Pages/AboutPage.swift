@@ -49,7 +49,7 @@ public extension Node where Context: HTML.BodyContext {
         
         return .section(
             .class("social-section"),
-            .sectionHeadline("My", highlighted: "Social"),
+            .h2(.text("Social")),
             .ul(
                 .forEach(mediaLinks) { mediaLink in
                     .li(
@@ -88,7 +88,7 @@ public extension Node where Context: HTML.BodyContext {
         
         return .section(
             .class("skills-section"),
-            .sectionHeadline("My", highlighted: "Skills"),
+            .h2(.text("Skills")),
             .ul(
                 .forEach(skills) { skill in
                     .li(
@@ -131,7 +131,7 @@ public extension Node where Context: HTML.BodyContext {
         
         return .section(
             .class("skills-section"),
-            .sectionHeadline("My", highlighted: "Experience"),
+            .h2(.text("Experience")),
             .ul(
                 .forEach(experiences) { experience in
                     .li(
@@ -154,19 +154,6 @@ public extension Node where Context: HTML.BodyContext {
             )
         )
     }
-}
-
-extension Node where Context: HTML.BodyContext {
-    
-    static func sectionHeadline(_ text: String, highlighted: String) -> Node {
-        return .h2(
-            .text(text + " "),
-            .span(.class("highlight-text"),
-                  .text(highlighted)
-            )
-        )
-    }
-    
 }
 
 extension Path {

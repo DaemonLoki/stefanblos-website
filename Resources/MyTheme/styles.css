@@ -448,7 +448,7 @@ a {
     height: 0.25rem;
     margin-right: 1rem;
     transform: translateY(-0.4rem);
-    background-color: var(--light-text);
+    background-color: var(--accent-color);
 }
 
 .content ul {
@@ -493,7 +493,7 @@ a {
     }
     
     .content h2::before {
-        background-color: var(--dark-text);
+        background-color: var(--dark-accent-color);
     }
         
     .post-head-image {
@@ -593,6 +593,16 @@ pre code .preprocessing {
     font-family: Montserrat-Bold;
 }
 
+.about-page h2::before {
+    display: inline-block;
+    content: "";
+    width: 2rem;
+    height: 0.25rem;
+    margin-right: 1rem;
+    transform: translateY(-0.4rem);
+    background-color: var(--dark-accent-color);
+}
+
 .about-page ul {
     list-style-type: none;
 }
@@ -638,22 +648,17 @@ pre code .preprocessing {
 .skill-property {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-bottom: 1px solid var(--dark-accent-color);
+    border-bottom: 20px solid var(--dark-accent-color);
+    border-bottom-style: dotted;
 }
 
 .skill-property:not(:last-child) {
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .skill-property:last-child {
     border-bottom: none;
-}
-
-.skill-property h3 {
-    justify-self: center;
-    align-self: center;
-    border-bottom: 4px solid var(--dark-accent-color);
 }
 
 .skill-property li {
@@ -663,19 +668,12 @@ pre code .preprocessing {
 .experience-property {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-bottom: 1px solid var(--dark-accent-color);
-}
-
-.experience-property div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border-bottom: 20px solid var(--dark-accent-color);
+    border-bottom-style: dotted;
 }
 
 .experience-property h3 {
     font-family: Montserrat-Bold;
-    border-bottom: 4px solid var(--dark-accent-color);
     margin-bottom: 10px;
 }
 
@@ -684,8 +682,8 @@ pre code .preprocessing {
 }
 
 .experience-property:not(:last-child) {
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .experience-property:last-child {
