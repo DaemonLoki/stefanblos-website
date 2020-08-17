@@ -573,3 +573,119 @@ pre code .preprocessing {
         color: var(--dark-accent-color);
     }
 }
+
+/**
+ About page
+ */
+
+.about-page h2 {
+    font-family: Montserrat-Bold;
+}
+
+.about-page ul {
+    list-style-type: none;
+}
+
+.social-section ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.social-section li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--dark-accent-color);
+    background-color: var(--dark-card);
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.social-section li:hover {
+    transform: scale(1.01, 1.01);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    border: 0px solid transparent;
+}
+
+.social-section a {
+    padding: 40px;
+}
+
+.social-section img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.skills-section h3 {
+    font-family: Montserrat-Bold;
+}
+
+.skill-property {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--dark-accent-color);
+}
+
+.skill-property:not(:last-child) {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.skill-property:last-child {
+    border-bottom: none;
+}
+
+.skill-property h3 {
+    justify-self: center;
+    align-self: center;
+    border-bottom: 4px solid var(--dark-accent-color);
+}
+
+.skill-property li {
+    margin-bottom: 40px;
+}
+
+.experience-property {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--dark-accent-color);
+}
+
+.experience-property div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-property h3 {
+    font-family: Montserrat-Bold;
+    border-bottom: 4px solid var(--dark-accent-color);
+    margin-bottom: 10px;
+}
+
+.experience-property div p {
+    font-style: italic;
+}
+
+.experience-property:not(:last-child) {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.experience-property:last-child {
+    border-bottom: none;
+}
+
+.experience-property li {
+    margin-bottom: 40px;
+}
+
+.prop-header {
+    font-style: bold;
+    color: var(--dark-accent-color);
+}

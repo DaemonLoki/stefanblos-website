@@ -53,7 +53,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                 .header(for: context, selectedSection: section.id),
                 .wrapper(
                     .h1(.text(section.title)),
-                    .itemList(for: section.items, on: context.site)
+                    .createItemList(by: section.id, with: section.items, on: context.site)
                 ),
                 .footer(for: context.site)
             )

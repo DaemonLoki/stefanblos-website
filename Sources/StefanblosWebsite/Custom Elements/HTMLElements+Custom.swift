@@ -18,7 +18,6 @@ public extension Node where Context: HTML.BodyContext {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         
-        print(formatter.string(from: date))
         if let className = className {
             return .time(.class(className), .attribute(named: "datetime", value: formatter.string(from: date)), .text("\(formatter.string(from: date))"))
         }
