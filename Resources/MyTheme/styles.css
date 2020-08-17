@@ -185,14 +185,13 @@ nav li a.selected {
 }
 
 .hero-section .intro-text::before {
-        display: inline-block;
-        content: "";
-        width: 4rem;
-        height: 0.25rem;
-        margin-right: 1rem;
-        transform: translateY(-0.2rem);
-        background-color: var(--light-text);
-    }
+    display: inline-block;
+    content: "";
+    width: 4rem;
+    height: 0.25rem;
+    margin-right: 1rem;
+    transform: translateY(-0.2rem);
+    background-color: var(--light-text);
 }
 
 .hero-section .intro-quote {
@@ -436,11 +435,20 @@ a {
 }
 
 .content h2 {
-    padding: 20px;
+    padding: 20px 0;
     display: inline-block;
-    border: 1px solid var(--accent-color);
     margin-top: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+}
+
+.content h2::before {
+    display: inline-block;
+    content: "";
+    width: 2rem;
+    height: 0.25rem;
+    margin-right: 1rem;
+    transform: translateY(-0.4rem);
+    background-color: var(--light-text);
 }
 
 .content ul {
@@ -484,10 +492,10 @@ a {
         color: var(--dark-accent-color);
     }
     
-    .content h2 {
-        border: 1px solid var(--dark-accent-color);
+    .content h2::before {
+        background-color: var(--dark-text);
     }
-    
+        
     .post-head-image {
         border: 2px solid var(--dark-text);
     }
