@@ -26,11 +26,11 @@ This sounds really abstract so here is a little snippet to demonstrate this. Don
 
 ```
 struct ContentView: View {
-	var body: some View { // 'some' = opaque return type
-		Text("I am a View") // the View element
-			.bold()           // modifier applied to the View
-			.padding()        // another modifier
-	}
+    var body: some View { // 'some' = opaque return type
+        Text("I am a View") // the View element
+        .bold()           // modifier applied to the View
+        .padding()        // another modifier
+    }
 }
 ```
 
@@ -42,9 +42,9 @@ In order to show a `String` on the screen we can just wrap it in a `Text` and it
 
 ```swift
 struct ContentView: View {
-	var body: some View {
-		Text("SwiftUI is awesome")
-	}
+    var body: some View {
+        Text("SwiftUI is awesome")
+    }
 }
 ```
 
@@ -58,7 +58,7 @@ Now we can set the size by using the system font like that:
 
 ```swift
 Text("Text with decent size")
-	.font(.system(size: 30))
+    .font(.system(size: 30))
 ```
 
 This works well but comes with a drawback. It will not adapt to *[dynamic type](https://developer.apple.com/documentation/uikit/uifont/scaling_fonts_automatically)*. This means that if your user will choose a different default text size, e.g., due to vision impairments, your `Text` won't automatically adapt. 
@@ -67,14 +67,14 @@ However, Apple provides a set of default [text styles](https://developer.apple.c
 
 ```swift
 Text("Largest built-in Text")
-	.font(.largeTitle)
+    .font(.largeTitle)
 ```
 
 There's even one more option here. You can even select one of a [few given designs](https://developer.apple.com/documentation/swiftui/font/design) for your text (which you can again explore with autocomplete). This can be done in the following way:
 
 ```swift
 Text("Monospaced text")
-	.font(.system(.title, design: .monospaced))
+    .font(.system(.title, design: .monospaced))
 ```
 
 Even after applying the font we can still change the *weight* of the font manually by setting it to [one of the built-in font weights](https://developer.apple.com/documentation/swiftui/font/weight) with `.fontWeight(Font.Weight)`.
@@ -85,11 +85,11 @@ You can also `.underline()` and .`strikethrough()` your text. Notice that these 
 
 ```swift
 Text("I'm a large, styled title")
-	.font(.largeTitle)
-	.bold()
-	.italic()
-	.underline(color: .blue)
-	.strikethrough(color: .green)
+    .font(.largeTitle)
+    .bold()
+    .italic()
+    .underline(color: .blue)
+    .strikethrough(color: .green)
 ```
 
 In addition there are also some lesser known modifications such as `.baselineOffset(CGFloat)`. It allows you to offset the baseline of the text vertically. Positive values will offset your text to the top while negative values will move it down from the baseline.
@@ -115,8 +115,8 @@ You might think that only specifying a background color looks odd since the colo
 
 ```swift
 Text("Text with beautiful background!")
-	.padding()
-	.background(Color.blue)
+    .padding()
+    .background(Color.blue)
 ```
 
 You can see the results of not using `.padding()` compared to using it in the screenshot below:
@@ -155,8 +155,8 @@ Jokes aside: while this might not seem like a particular thing standing out it o
 
 ```swift
 Text("SwiftUI")
-	.font(.largeTitle)
-	.foregroundColor(.red)
+    .font(.largeTitle)
+    .foregroundColor(.red)
 +
 Text("is")
     .font(.headline)
@@ -172,7 +172,3 @@ Without the need for anything like `NSAttributedString` (which was one way to so
 [https://twitter.com/twostraws/status/1193645332158173186](https://twitter.com/twostraws/status/1193645332158173186)
 
 Thanks again for reading and have a great day!
-
- 
-
-[Text in SwiftUI]()
