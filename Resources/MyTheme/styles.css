@@ -299,7 +299,7 @@ a {
 }
 
 .item-list h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 1.3em;
     font-family: Montserrat-Bold;
 }
@@ -322,7 +322,7 @@ a {
 .bottom-container {
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 @media (min-width: 768px) {
@@ -354,24 +354,27 @@ a {
     color: var(--accent-color);
 }
 
-.tag-list li:not(:first-child) {
-    margin-left: 10px;
+.tag-list li {
+    margin-right: 10px;
 }
 
 .tag-list li:first-child {
-    padding-left: 0px;
+    padding-left: 10px;
 }
 
 .tag-list li,
 .tag {
     display: inline-block;
-    text-decoration: underline;
 }
 
 .tag-list a,
 .tag a {
     text-decoration: none;
     color: var(--accent-color);
+}
+
+.tag-list a:hover {
+    text-decoration: underline;
 }
 
 @media (prefers-color-scheme: dark) {
