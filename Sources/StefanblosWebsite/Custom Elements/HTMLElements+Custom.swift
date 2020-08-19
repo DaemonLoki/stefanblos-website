@@ -18,6 +18,14 @@ public extension Node where Context: HTML.BodyContext {
         .element(named: "svg", nodes: nodes)
     }
     
+    static func path(_ nodes: Node<HTML.BodyContext>...) -> Node {
+        .element(named: "path", nodes: nodes);
+    }
+    
+    static func createSVG(viewBox: String, path: String) -> Node {
+        return .svg(.attribute(named: "viewBox", value: viewBox), .path(.attribute(named: "d", value: path)))
+    }
+    
     static func dateTime(for date: Date, className: String?) -> Node {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
