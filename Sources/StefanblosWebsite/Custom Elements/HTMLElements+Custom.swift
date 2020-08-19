@@ -14,6 +14,10 @@ public extension Node where Context: HTML.BodyContext {
         .element(named: "time", nodes: nodes)
     }
     
+    static func svg(_ nodes: Node<HTML.BodyContext>...) -> Node {
+        .element(named: "svg", nodes: nodes)
+    }
+    
     static func dateTime(for date: Date, className: String?) -> Node {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

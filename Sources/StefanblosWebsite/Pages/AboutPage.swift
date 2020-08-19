@@ -42,9 +42,9 @@ public extension Node where Context: HTML.BodyContext {
     static var social: Node {
         
         let mediaLinks = [
-            SocialLink(link: "https://twitter.com/stefanjblos", pathToImage: "social/twitter-dark-mode.png", altText: "Link to my Twitter profile"),
-            SocialLink(link: "https://github.com/daemonloki", pathToImage: "social/github-dark-mode.png", altText: "Link to my Github profile"),
-            SocialLink(link: "https://www.linkedin.com/in/stefan-blos/", pathToImage: "social/linkedin.png", altText: "Link to my LinkedIn profile"),
+            SocialLink(link: "https://twitter.com/stefanjblos", pathToImage: "social/twitter.svg", altText: "Link to my Twitter profile"),
+            SocialLink(link: "https://github.com/daemonloki", pathToImage: "social/github.svg", altText: "Link to my Github profile"),
+            SocialLink(link: "https://www.linkedin.com/in/stefan-blos/", pathToImage: "social/linkedin.svg", altText: "Link to my LinkedIn profile"),
         ]
         
         return .section(
