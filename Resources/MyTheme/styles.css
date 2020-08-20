@@ -3,6 +3,7 @@
     --background-color: #EDF2EF;
     --card-background-color: #E7EEEA;
     --text-color: #424242;
+    --code-color: #1F5B45;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +12,7 @@
         --background-color: #292f36;
         --card-background-color: #23282F;
         --text-color: #e3e4e5;
+        --code-color: #d1d646;
     }
 }
 
@@ -252,6 +254,11 @@ a {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    height: 100%;
+}
+
+.item-list article > a {
+    flex: 1;
 }
     
 .item-list > li:hover {
@@ -273,6 +280,12 @@ a {
     margin-bottom: 20px;
     font-size: 1.3em;
     font-family: Montserrat-Bold;
+}
+
+.item-list > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
     
 .item-list a {
@@ -483,8 +496,8 @@ footer {
  */
 
 code {
-    font-size: 1.3em;
-    color: var(--accent-color);
+    font-size: 1.4em;
+    color: var(--code-color);
     padding: 0 0.25rem;
 }
 

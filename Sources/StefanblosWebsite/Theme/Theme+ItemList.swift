@@ -37,15 +37,13 @@ extension Node where Context == HTML.BodyContext {
         return .article(
             .a(
                 .href(item.path),
-                .div(
-                    .h1(.class("item-headline"),
-                        .text(item.title)
-                    ),
-                    .p(.text(item.description)),
-                    .div(.class("bottom-container"),
-                         .tagList(for: item, on: site),
-                         .dateTime(for: item.date, className: "item-date")
-                    )
+                .h1(.class("item-headline"),
+                    .text(item.title)
+                ),
+                .p(.text(item.description)),
+                .div(.class("bottom-container"),
+                     .tagList(for: item, on: site),
+                     .dateTime(for: item.date, className: "item-date")
                 )
             )
         )
