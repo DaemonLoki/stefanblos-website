@@ -1,7 +1,7 @@
 ---
 date: 2020-07-28 21:08
 description: Text in SwiftUI.
-tags: publish, swiftui, article
+tags: ios, swiftui, swift
 ---
 
 # Text in SwiftUI
@@ -103,10 +103,11 @@ Another important aspect of working with text is coloring. Fortunately, SwiftUI 
 One interesting feature of SwiftUI is called *semantic colors*. For example, you have colors like `primary`, `secondary` and `accentColor`. The first two will indicate the importance of text through the coloring. The nice thing is that they will automatically adjust to Dark Mode. So while in Light Mode these show prominent (`.primary`) text in black. At the same time text of lesser importance (`.secondary`) will be colored in gray. In Dark Mode however that switches and `.primary` will give your Text a prominent light color that will stand out from the dark background.
 
 
-<img src="../../Resource/images/text-in-swiftui/light_dark_mode.png" alt="A screenshot of light mode (above) and dark mode (below)." />
-
-![Text%20in%20SwiftUI%202d13fe4df7044ded9b27e1013a3d1d9a/Bildschirmfoto_2020-03-30_um_11.10.05.png](Text%20in%20SwiftUI%202d13fe4df7044ded9b27e1013a3d1d9a/Bildschirmfoto_2020-03-30_um_11.10.05.png)
-
+<figure>
+    <img class="small-image" src="../../images/posts/text-in-swiftui/light_dark_mode.png" alt="A screenshot of light mode (above) and dark mode (below)." />
+    <figcaption>A screenshot of light mode (above) and dark mode (below).</figcaption>
+</figure>
+    
 Speaking of it there is of course also a `.background` modifier. With it you can again specify a color with, e.g., `.background(Color.blue)`. You may notice that in contrast to the `.foregroundColor` modifier we need to explicitly state the type of the parameter, namely `Color`.
 
 (Side note: the reason for that is that you can also use many other types of `View`s as backgrounds, such as `Shape` types or `Image`s. It is important to note that you can use that modifier for almost all other `View`s as well. With that you get a really powerful API to create more sophisticated layouts and views.)
@@ -121,7 +122,10 @@ Text("Text with beautiful background!")
 
 You can see the results of not using `.padding()` compared to using it in the screenshot below:
 
-![Text%20in%20SwiftUI%202d13fe4df7044ded9b27e1013a3d1d9a/Bildschirmfoto_2020-03-30_um_10.55.48.png](Text%20in%20SwiftUI%202d13fe4df7044ded9b27e1013a3d1d9a/Bildschirmfoto_2020-03-30_um_10.55.48.png)
+<figure>
+    <img class="small-image" src="../../images/posts/text-in-swiftui/text_padding.png" alt="A screenshot of different paddings in text." />
+    <figcaption>A screenshot of different paddings in text.</figcaption>
+</figure>
 
 ## Fitting Text into available space
 
@@ -169,6 +173,6 @@ Text("awesome")
 
 Without the need for anything like `NSAttributedString` (which was one way to solve this task in the ancient world of  `UIKit`) you can achieve different text styles and coloring into one UI element super easily. I think that this is remarkable! And if you want to see what is made possible by this [check the tweet below](https://twitter.com/twostraws/status/1193645332158173186) (which I just spent way too much time searching for). After doing that just follow [Paul](https://twitter.com/twostraws) because he produces awesome content.
 
-[https://twitter.com/twostraws/status/1193645332158173186](https://twitter.com/twostraws/status/1193645332158173186)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Waiting for something to render, so obviously I need to fill my time playing around with SwiftUI text effects. <a href="https://t.co/q3AaAJMBph">pic.twitter.com/q3AaAJMBph</a></p>&mdash; Paul Hudson (@twostraws) <a href="https://twitter.com/twostraws/status/1193645332158173186?ref_src=twsrc%5Etfw">November 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Thanks again for reading and have a great day!

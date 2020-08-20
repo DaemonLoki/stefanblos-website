@@ -1,7 +1,7 @@
 ---
 date: 2020-07-28 21:07
 description: Setting up and getting started with Publish.
-tags: publish, swift, article
+tags: publish, swift, web
 ---
 
 # Getting started with Publish

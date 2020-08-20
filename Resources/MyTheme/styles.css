@@ -400,10 +400,40 @@ a {
 .content ul {
     margin-top: 40px;
     margin-bottom: 40px;
+    list-style-position: inside;
 }
 
 .content li {
     margin-bottom: 10px;
+}
+
+.content img {
+    display: block;
+    margin: 0 auto;
+}
+
+.small-image {
+    width: 40%;
+}
+
+.medium-image {
+    width: 70%;
+}
+
+.large-image {
+    width: 100%;
+}
+
+.content .twitter-tweet {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.content figcaption {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .browse-all {
