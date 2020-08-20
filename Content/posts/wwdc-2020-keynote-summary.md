@@ -1,6 +1,6 @@
 ---
 date: 2020-06-23 23:11
-description: Roundup of all the content Apple introduced during their WWDC 2020 Keynote Event.
+description: Summary of everything Apple introduced WWDC 2020 Keynote.
 tags: ios, wwdc2020, swift
 ---
 

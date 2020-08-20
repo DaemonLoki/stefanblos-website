@@ -1,6 +1,6 @@
 ---
-date: 2020-07-28 21:07
-description: Setting up and getting started with Publish.
+date: 2020-08-16 21:07
+description: How to setup Publish and get started building with it.
 tags: publish, swift, web
 ---
 

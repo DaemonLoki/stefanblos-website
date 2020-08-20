@@ -412,6 +412,14 @@ a {
     margin: 0 auto;
 }
 
+.content video {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
 .small-image {
     width: 40%;
 }

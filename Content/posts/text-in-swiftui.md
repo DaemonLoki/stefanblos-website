@@ -1,6 +1,6 @@
 ---
-date: 2020-07-28 21:08
-description: Text in SwiftUI.
+date: 2020-03-30 18:31
+description: Introduction to and how to use the Text View in SwiftUI.
 tags: ios, swiftui, swift
 ---
 
