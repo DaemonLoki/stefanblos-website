@@ -40,6 +40,11 @@
     src: url(/fonts/Poppins-Regular.ttf) format("truetype");
 }
 
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+}
+
 /**
  Body
  */
@@ -373,6 +378,10 @@ a {
     margin-bottom: 30px;
 }
 
+.content strong {
+    font-family: Poppins-Bold;
+}
+
 .content h1 {
     font-family: Montserrat-Bold;
     color: var(--accent-color);
@@ -453,22 +462,6 @@ a {
     font-size: 1.4em;
     margin-right: 10px;
     padding: 6px 10px;
-}
-
-@media (max-width: 768px) {
-    .content h2 {
-        display: block;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .content > p {
-        margin-bottom: 20px;
-    }
-    
-    .content li {
-        margin-left: 20px;
-    }
 }
 
 /**
