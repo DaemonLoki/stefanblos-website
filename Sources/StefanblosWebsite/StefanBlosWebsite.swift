@@ -21,9 +21,9 @@ struct StefanBlosWebsite: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://your-website-url.com")!
-    var name = "Stefan"
-    var description = "A description of my site"
+    var url = URL(string: "https://stefanblos.com")!
+    var name = "Stefan Blos"
+    var description = "Personal blog of Stefan Blos"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
