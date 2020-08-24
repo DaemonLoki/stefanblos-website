@@ -5,6 +5,3 @@
 /*.xcodeproj
 .publish
 
-# Output folder of Publish
-Output/**
-

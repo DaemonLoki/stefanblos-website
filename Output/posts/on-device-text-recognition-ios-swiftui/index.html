@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Stefan"/><link rel="canonical" href="https://your-website-url.com/posts/on-device-text-recognition-ios-swiftui"/><meta name="twitter:url" content="https://your-website-url.com/posts/on-device-text-recognition-ios-swiftui"/><meta name="og:url" content="https://your-website-url.com/posts/on-device-text-recognition-ios-swiftui"/><title>On-device Text Recognition on iOS with SwiftUI | Stefan</title><meta name="twitter:title" content="On-device Text Recognition on iOS with SwiftUI | Stefan"/><meta name="og:title" content="On-device Text Recognition on iOS with SwiftUI | Stefan"/><meta name="description" content="Detailed guide how to do on-device OCR on iOS with SwiftUI"/><meta name="twitter:description" content="Detailed guide how to do on-device OCR on iOS with SwiftUI"/><meta name="og:description" content="Detailed guide how to do on-device OCR on iOS with SwiftUI"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Stefan"/></head><body class="item-page"><header><div class="wrapper"><a class="site-name" href="/">Stefan</a><nav><ul><li><a href="/about">About</a></li><li><a class="selected" href="/posts">My posts</a></li></ul></nav></div></header><div class="wrapper"><article><ul class="tag-list"><li><a href="/tags/ios">#ios</a></li><li><a href="/tags/swiftui">#swiftui</a></li><li><a href="/tags/vision">#vision</a></li></ul><div class="post-head"><img class="post-head-image" src="../../images/hero.jpg" alt="Image of Stefan presenting to a crowd."/><p>Stefan Blos<br/><time datetime="27.05.2020">27.05.2020</time></p></div><div class="content"><h1>On-device Text Recognition on iOS with SwiftUI</h1><p>One of the greatest powers of Apple's iOS platform is the diversity of built-in frameworks. There are many gems to be found which provide easy-to-use but advanced functionality. One of these examples is the <code>Vision</code> framework which was introduced in iOS 11.</p><p>The goal we want to achieve in this tutorial is to implement an on-device <strong>text recognition</strong> app, which allows our code to work even without internet connection. In addition we want to be able to scan documents right from our camera feed and extract the text from there. If you think this will require a complex dark-magic machine-learning masterplan you will be proven wrong by the end of this article.</p><video name="Sample video" class="small-image" controls="controls"
+src="../../images/posts/text-recognition-ios/text_recognition_sample.mov"></video><p>All of the work we'll be doing uses built-in functionality available in iOS. We will also incorporate SwiftUI into our little project because it's hip and cool (if you haven't tried it: trust me on this one). So without further ado - let's jump right in.</p><p>(Note: the entire code is also available <a href="https://github.com/DaemonLoki/TextRecognitionSample">in this repository on my Github</a>)</p><h2>Setting up our project</h2><figure>
+    <img class="medium-image" src="../../images/posts/text-recognition-ios/setup_project.gif" alt="GIF how to setup the project." />
+    <figcaption>How to setup the project in Xcode.</figcaption>
+</figure><p>The first thing to do is to open up Xcode and creating a new project. We select <em>Single View App</em> and give it a nice, modern, startup-like name such as "Text Recognition Sample". It is important to select <em>SwiftUI</em> for the <em>User Interface.</em></p><p>I will not go into too much detail about the project structure here as I assume you have basic knowledge of <em>SwiftUI</em>. If not, there are plenty of great tutorials out there either from <a href="https://developer.apple.com/tutorials/swiftui/tutorials">Apple directly</a> or in <a href="https://www.hackingwithswift.com/articles/196/learn-swiftui-with-free-tutorials">this list by Paul Hudson</a>.</p><p>We are going to build a basic UI focused on functionality. This means that we wrap a <code>Text</code> element inside of a <code>ScrollView</code> (because we might scan a LOT of text) and a <code>Button</code> to start scanning. This means that our body (with a little styling) will be:</p><pre><code><span class="type">NavigationView</span> {
+    <span class="type">VStack</span> {
+        <span class="type">ScrollView</span> {
+            <span class="type">ZStack</span> {
+                <span class="type">RoundedRectangle</span>(cornerRadius: <span class="number">20</span>, style: .<span class="dotAccess">continuous</span>)
+                    .<span class="call">fill</span>(<span class="type">Color</span>.<span class="property">gray</span>.<span class="call">opacity</span>(<span class="number">0.2</span>))
+                
+                <span class="type">Text</span>(recognizedText)
+                    .<span class="call">padding</span>()
+            }
+            .<span class="call">padding</span>()    
+        }
+        
+        <span class="type">Spacer</span>()
+        
+        <span class="type">HStack</span> {
+            <span class="type">Spacer</span>()
+            
+            <span class="type">Button</span>(action: {
+                <span class="comment">// start scanning</span>
+            }) {
+                <span class="type">Text</span>(<span class="string">"Start Scanning"</span>)
+            }
+            .<span class="call">padding</span>()
+            .<span class="call">foregroundColor</span>(.<span class="dotAccess">white</span>)
+            .<span class="call">background</span>(<span class="type">Capsule</span>().<span class="call">fill</span>(<span class="type">Color</span>.<span class="property">blue</span>))
+        }
+        .<span class="call">padding</span>()
+    }
+    .<span class="call">navigationBarTitle</span>(<span class="string">"Text Recognition"</span>)
+}
+</code></pre><p>There are two things to mention here. First is that we haven't implemented the functionality of the <code>Button</code> yet. Rather we used a placeholder comment of <code>// start scanning</code> here. Second, the <code>Text</code> element uses a variable. In order to be able to change the content of our <code>View</code> we need to create a <code>State</code> property which we call <code>recognizedText</code>:</p><pre><code><span class="keyword">@State private var</span> recognizedText = <span class="string">"Tap button to start scanning."</span>
+</code></pre><p>The idea is that we can hand this to the view that is doing the scanning. Since it is a <code>Binding</code> it allows it to manipulate the <code>String</code>. Therefore we make sure we have a consistent flow of data. If you want to know more about data flow in SwiftUI I can highly recommend <a href="https://developer.apple.com/videos/play/wwdc2019/226/">this video from WWDC 2019</a>. Our UI is done and looks like this:</p><figure>
+    <img class="small-image" src="../../images/posts/text-recognition-ios/ui_screenshot.png" alt="Screenshot of the UI we built so far." />
+    <figcaption>Screenshot of the UI we built so far.</figcaption>
+</figure><h2>Setup the scanning with VisionKit</h2><p>The next step is to setup our text recognition workflow. <a href="https://developer.apple.com/documentation/visionkit">VisionKit</a> is "a small framework that lets your app use the system's document scanner". It is super powerful and comes in as a full-blown <code>ViewController</code> with the short and catchy name <code>VNDocumentCameraViewController</code> and its dear friend <code>VNDocumentCameraViewControllerDelegate</code> (Yes, Apple loves long names. As proof just check out <a href="https://github.com/Quotation/LongestCocoa">this wonderful repository</a>).</p><p>As you might have noticed this has the term <em>ViewController</em> in it which implies that it comes from <code>UIKit</code>. Therefore we need to build a little bridge to incorporate it in our SwiftUI code. Fortunately <a href="https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit">this is quite easy with the use of <code>UIViewControllerRepresantable</code></a>.</p><p>We will create a new Swift file called "ScanDocumentView" and replace the <code>Foundation</code> import with imports for <code>SwiftUI</code> and <code>VisionKit</code>. Then we create a <code>Struct</code> called <code>ScanDocumentView</code> conforming to <code>UIViewControllerRepresentable</code> . In order to fulfill the requirements we can use a little trick. Just add the following line:</p><pre><code><span class="keyword">typealias</span> UIViewControllerType = <span class="type">VNDocumentCameraViewController</span>
+</code></pre><p>If you allow Xcode to add the protocol stubs it will automatically use the correct types and saves you quite some tedious typing work. After this we can remove the abovementioned <code>typealias</code> and the placeholders to have the following code in our file so far:</p><pre><code><span class="keyword">import</span> SwiftUI
+<span class="keyword">import</span> VisionKit
+
+<span class="keyword">struct</span> ScanDocumentView: <span class="type">UIViewControllerRepresentable</span> {
+    <span class="keyword">func</span> makeUIViewController(context: <span class="type">Context</span>) -&gt; <span class="type">VNDocumentCameraViewController</span> {
+        <span class="comment">// to implement</span>
+    }
+    
+    <span class="keyword">func</span> updateUIViewController(<span class="keyword">_</span> uiViewController: <span class="type">VNDocumentCameraViewController</span>, context: <span class="type">Context</span>) {
+        <span class="comment">// nothing to do here</span>
+    }
+    
+}
+</code></pre><p>We still have an error because we have not yet implemented the required <code>Coordinator</code> to respond to events from the <code>VNDocumentCameraViewController</code>. We will fix this now. But first, we need to think about the steps to be taken. In order to bridge the delegate methods from the ViewController without SwiftUI code we need to create a <code>Coordinator</code>. This will allow us to respond to the <code>didFinishWithScan</code> delegate method of the <code>VNDocumentCameraViewControllerDelegate</code> and start with the next step of our pipeline.</p><p>Next we hand a <code>Binding</code> that will automatically be updated when the processing has finished. It also needs a reference to its parent. Therefore our <code>Coordinator</code> can be created inside our <code>ScanDocumentView</code> struct and initially looks like this:</p><pre><code><span class="keyword">class</span> Coordinator: <span class="type">NSObject</span>, <span class="type">VNDocumentCameraViewControllerDelegate</span> {
+    <span class="keyword">var</span> recognizedText: <span class="type">Binding</span>&lt;<span class="type">String</span>&gt;
+    <span class="keyword">var</span> parent: <span class="type">ScanDocumentView</span>
+    
+    <span class="keyword">init</span>(recognizedText: <span class="type">Binding</span>&lt;<span class="type">String</span>&gt;, parent: <span class="type">ScanDocumentView</span>) {
+        <span class="keyword">self</span>.<span class="property">recognizedText</span> = recognizedText
+        <span class="keyword">self</span>.<span class="property">parent</span> = parent
+    }
+    
+    <span class="keyword">func</span> documentCameraViewController(<span class="keyword">_</span> controller: <span class="type">VNDocumentCameraViewController</span>, didFinishWith scan: <span class="type">VNDocumentCameraScan</span>) {
+        <span class="comment">// do the processing of the scan</span>
+    }
+}
+</code></pre><p>We need to use that <code>Coordinator</code> in the <code>makeUIViewController</code> method with only three lines of code:</p><pre><code><span class="keyword">let</span> documentViewController = <span class="type">VNDocumentCameraViewController</span>()
+documentViewController.<span class="property">delegate</span> = context.<span class="property">coordinator</span>
+<span class="keyword">return</span> documentViewController
+</code></pre><p>There are two missing pieces in our <code>Struct</code> right now. First, we need to create our coordinator somewhere. Second, in order to extract text the <code>Vision</code> framework needs to come into play and do its magic.</p><p>We add a <code>makeCoordinator</code> function and a property for our <code>recognizedText</code> binding. Let's add both of that to our <code>ScanDocumentView</code> struct:</p><pre><code><span class="keyword">@Binding var</span> recognizedText: <span class="type">String</span>
+    
+<span class="keyword">func</span> makeCoordinator() -&gt; <span class="type">Coordinator</span> {
+    <span class="type">Coordinator</span>(recognizedText: $recognizedText, parent: <span class="keyword">self</span>)
+}
+</code></pre><p>We will incorporate the <code>Vision</code> magic in a second but first we want to call the scanning ViewController as it is already fully functional and quite impressive to use. So let's head back to <code>ContentView</code> and open it up.</p><h2>Showing the <code>ScanDocumentView</code></h2><p>There are multiple ways to present the <code>ScanDocumentView</code> but regardless of which one to use we need to first provide a reason for accessing the user's camera. Therefore we open up the <code>Info.plist</code> file and right-click below the entries and select <code>Add row</code>. As a key we enter <code>Privacy - Camera Usage Description</code> and add a meaningful description such as "We need to use the camera to scan documents".</p><figure>
+<img class="medium-image" src="../../images/posts/text-recognition-ios/add_p_list.gif" alt="How to add the `Privacy - Camera Usage Description` to your `Info.plist` file." />
+    <figcaption>How to add the Privacy - Camera Usage Description to your Info.plist  file.</figcaption>
+</figure><p>This will create a prompt for the user upon first use asking for allowance. With that we can finally build up the rest of our UI. It might be surprising to see how little work is necessary in order to do this.</p><p>We will use a <code>sheet</code> that will slide in from the bottom and show the scanning UI and slide back down when we are finished. This is really easy to achieve but first we add another <code>State</code> property to determined whether the sheet is shown or not. Add this below our previous property in <code>ContentView</code>:</p><pre><code><span class="keyword">@State private var</span> showingScanningView = <span class="keyword">false</span>
+</code></pre><p>In order to present a <code>sheet</code> we apply a modifier to our outermost <code>VStack</code>. Afterward we can add the following snippet right underneath our <code>navigationBarTitle</code> modifier:</p><pre><code>.<span class="call">sheet</span>(isPresented: $showingScanningView) {
+    <span class="type">ScanDocumentView</span>(recognizedText: <span class="keyword">self</span>.$recognizedText)
+}
+</code></pre><p>The final step is to replace the comment (<code>// start scanning</code>) of our <code>Button</code> to set the <code>showingScanningView</code> state to <code>true</code>:</p><pre><code><span class="keyword">self</span>.<span class="property">showingScanningView</span> = <span class="keyword">true</span>
+</code></pre><p>Launch the app and you will be able to scan documents. It uses the beautiful UI of the system's native document scanner and allows us to already extract data from your camera feed. All of this can be achieved in ~80 lines of code including some UI improvements.</p><p>Now for the last part of text recognition, we can finally add the <code>Vision</code> framework so let's do it.</p><h2>Recognizing text with <code>Vision</code></h2><p>If we scan a document and hit the <code>Save</code> button right now nothing happens. This makes sense since we only included a skeleton for the <code>didFinishWithScan</code> delegate method in our <code>Coordinator</code> of <code>ScanDocumentView</code> with an empty body.</p><p>Again, we need to think about what we want to achieve. The object that we receive from the scan is of type <code>VNDocumentCameraScan</code>. According to <a href="https://developer.apple.com/documentation/visionkit/vndocumentcamerascan">the documentation</a> it will have the number of pages (<code>pageCount</code>) and a helper method to get an image of the page at a certain index (<code>imageOfPage(at: Int)</code>). Therefore we will create an array of images containing all the scanned documents.</p><p>This array can be fed into the <code>VNRecognizeTextRequest</code> which is a <code>Vision</code> <a href="https://developer.apple.com/documentation/vision/vnrecognizetextrequest">class to handle text recognition</a>. For each of these pages we will extract the text, add that up, and finally replace our <code>recognizedText</code> binding with that text.</p><p>Next, we enhance our <code>Coordinator</code> to be able to extract the images. Adding a helper function will help us separate that logic:</p><pre><code><span class="keyword">fileprivate func</span> extractImages(from scan: <span class="type">VNDocumentCameraScan</span>) -&gt; [<span class="type">CGImage</span>] {
+    <span class="keyword">var</span> extractedImages = [<span class="type">CGImage</span>]()
+    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="number">0</span>..&lt;scan.<span class="property">pageCount</span> {
+        <span class="keyword">let</span> extractedImage = scan.<span class="call">imageOfPage</span>(at: index)
+        <span class="keyword">guard let</span> cgImage = extractedImage.<span class="property">cgImage</span> <span class="keyword">else</span> { <span class="keyword">continue</span> }
+        
+        extractedImages.<span class="call">append</span>(cgImage)
+    }
+    <span class="keyword">return</span> extractedImages
+}
+</code></pre><p>The reason we use <code>CGImage</code> here is that it is the required format for the next step in our pipeline.</p><p>Next, we will get into the essential part of this tutorial - <strong>recognizing text</strong>.</p><p>Due to its complexity we break down the recognizing function in several parts:</p><ul><li>We will create a variable called <code>entireRecognizedText</code> where the captured text will be stored</li><li>We define a <code>VNRecognizeTextRequest</code> with a completion handler and the <code>recognitionLevel</code> set to <code>.accurate</code> (instead of the <code>.fast</code> option that can be used for realtime applications)</li><li>Once it is processed we will extract the single best candidate from all observations given to the request</li><li>We append it to the <code>entireRecognizedText</code> variable</li><li>We iterate over all images and create and perform a <code>VNImageRequestHandler</code> with our previously created request</li></ul><p>So here we go:</p><pre><code><span class="keyword">fileprivate func</span> recognizeText(from images: [<span class="type">CGImage</span>]) -&gt; <span class="type">String</span> {
+    <span class="keyword">var</span> entireRecognizedText = <span class="string">""</span>
+    <span class="keyword">let</span> recognizeTextRequest = <span class="type">VNRecognizeTextRequest</span> { (request, error) <span class="keyword">in
+        guard</span> error == <span class="keyword">nil else</span> { <span class="keyword">return</span> }
+        
+        <span class="keyword">guard let</span> observations = request.<span class="property">results</span> <span class="keyword">as</span>? [<span class="type">VNRecognizedTextObservation</span>] <span class="keyword">else</span> { <span class="keyword">return</span> }
+        
+        <span class="keyword">let</span> maximumRecognitionCandidates = <span class="number">1</span>
+        <span class="keyword">for</span> observation <span class="keyword">in</span> observations {
+            <span class="keyword">guard let</span> candidate = observation.<span class="call">topCandidates</span>(maximumRecognitionCandidates).<span class="property">first</span> <span class="keyword">else</span> { <span class="keyword">continue</span> }
+            
+            entireRecognizedText += <span class="string">"</span>\(candidate.<span class="property">string</span>)<span class="string">\n"</span>
+            
+        }
+    }
+    recognizeTextRequest.<span class="property">recognitionLevel</span> = .<span class="dotAccess">accurate</span>
+    
+    <span class="keyword">for</span> image <span class="keyword">in</span> images {
+        <span class="keyword">let</span> requestHandler = <span class="type">VNImageRequestHandler</span>(cgImage: image, options: [:])
+        
+        <span class="keyword">try</span>? requestHandler.<span class="call">perform</span>([recognizeTextRequest])
+    }
+    
+    <span class="keyword">return</span> entireRecognizedText
+}
+</code></pre><p>We return our recognized text so we need to concatenate our two functions inside of the <code>didFinishWithScan</code> delegate method. With only three lines of code we can extract the images from the scan, perform the text recognition, and set the result to our <code>String</code> binding variable called <code>recognizedText</code>.</p><pre><code><span class="keyword">let</span> extractedImages = <span class="call">extractImages</span>(from: scan)
+<span class="keyword">let</span> processedText = <span class="call">recognizeText</span>(from: extractedImages)
+recognizedText.<span class="property">wrappedValue</span> = processedText
+</code></pre><h2>Closing the bottom sheet</h2><p>If we run the app now we will still see...nothing. Hitting the "Save" button will still not result in any changes. I can guarantee you that our code works - we only need to close the bottom sheet that we opened up. In order to do that we need to make use of an <code>@Environment</code> variable called <code>\.presentationMode</code>.</p><p>This allows us to close the sheet and give our little app the final functionality it needs. At the top of our <code>ScanDocumentView</code> struct we need to add the following property:</p><pre><code><span class="keyword">@Environment</span>(\.<span class="property">presentationMode</span>) <span class="keyword">var</span> presentationMode
+</code></pre><p>In our <code>Coordinator</code> below the last line of our <code>didFinishWithScan</code> method we need to call the <code>dismiss()</code> function:</p><pre><code>parent.<span class="property">presentationMode</span>.<span class="property">wrappedValue</span>.<span class="call">dismiss</span>()
+</code></pre><p>Now you can run the app on a real device and see the full magic we created.</p><h2>Summary</h2><p>The <code>Vision</code> framework enables us to build powerful Computer Vision features into our apps without any prior domain knowledge. You do not have to be a computer vision professional in order to do text recognition on iOS.</p><p>Furthermore it is amazing that this is running solely on device. There is no need for an internet connection and it is also blazing fast. The demo video is running on an iPhone 8 which was released 3.5 years ago. On more modern devices it's even much faster.</p><p>I encourage you to try it out yourself. You can also take a look at <a href="https://github.com/DaemonLoki/TextRecognitionSample">the entire repository over at my Github</a>. I think the capabilities Apple introduced with the Vision framework are incredible and combined with SwiftUI it is a lot of fun to implement.</p><p>If you are interested in how you can use machine learning on iOS and other platforms feel free to contact me or comment on this article. You can also connect with me on <a href="https://twitter.com/stefanjblos">Twitter</a> or <a href="https://www.linkedin.com/in/stefan-blos/">LinkedIn</a>. Thanks a lot for following this article.</p></div></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>
