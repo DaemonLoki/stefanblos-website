@@ -195,10 +195,6 @@ nav li a.selected {
     .hero-section {
         display: block;
     }
-    
-    .hero-image {
-        display: none;
-    }
 }
 
 @media (prefers-color-scheme: dark) {
