@@ -663,3 +663,41 @@ pre code .preprocessing {
     font-style: bold;
     color: var(--accent-color);
 }
+
+@media (max-width: 768px) {
+    .social-section ul {
+        gap: 10px;
+        margin: 0;
+    }
+    
+    .social-section li {
+        width: 100%;
+    }
+    
+    .social-section a {
+        padding: 0px;
+    }
+    
+    .skill-property {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .skill-property li {
+        margin-bottom: 20px;
+    }
+    
+    .experience-property {
+        grid-template-columns: repeat(1, 1fr);
+          gap: 30px;
+          padding-bottom: 20px;
+          margin-bottom: 40px;
+      }
+          
+
+    .experience-property li {
+        margin-bottom: 20px;
+    }
+}
