@@ -97,7 +97,7 @@ header .site-name {
     font-family: Montserrat-Bold;
     border-bottom: 5px solid var(--accent-color);
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -122,14 +122,33 @@ nav {
 
 nav li {
     display: inline-block;
-    margin: 0 7px;
+    margin: 0 8px;
     line-height: 1.5em;
-    padding-left: 8px;
-    padding-right: 8px;
+
+}
+
+nav li a {
+    display: inline-block;
+    padding: 8px;
 }
 
 nav li a.selected {
     color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    nav li:first-child {
+        margin-left: 0px;
+        margin-right: 8px;
+        
+    }
+    
+    nav li:first-child a {
+        padding-left: 0px;
+        padding-right: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
 }
 
 /**
