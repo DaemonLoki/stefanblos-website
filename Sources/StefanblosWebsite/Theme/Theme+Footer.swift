@@ -24,8 +24,8 @@ extension Node where Context == HTML.BodyContext {
                 .text("RSS feed"),
                 .href("/feed.rss")
                 )),
-            .p(.a(.text("Impressum"),
-                  .href("/impressum"))
+            .p(.a(.text("Imprint"),
+                  .href("/imprint"))
             )
         )
     }

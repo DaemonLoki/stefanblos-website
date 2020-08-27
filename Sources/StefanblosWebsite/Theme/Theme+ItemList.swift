@@ -39,7 +39,7 @@ extension Node where Context == HTML.BodyContext {
         return .article(
             .a(
                 .href(item.path),
-                .h1(.class("item-headline"),
+                .h3(.class("item-headline"),
                     .text(item.title)
                 ),
                 .p(.text(item.description)),

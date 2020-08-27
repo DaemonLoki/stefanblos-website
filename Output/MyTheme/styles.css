@@ -164,12 +164,6 @@ nav li a.selected {
     margin-bottom: 10px;
 }
 
-.hero-section h2 {
-    font-weight: 300;
-    font-style: italic;
-    margin-top: 0;
-}
-
 .hero-section .text-container {
     display: flex;
     flex-direction: column;
@@ -248,6 +242,24 @@ a {
     color: var(--accent-color);
 }
 
+section h2 {
+    padding: 20px 0;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: Montserrat-Bold;
+}
+
+section h2::before {
+    display: inline-block;
+    content: "";
+    width: 2rem;
+    height: 0.25rem;
+    margin-right: 1rem;
+    transform: translateY(-0.4rem);
+    background-color: var(--accent-color);
+}
+
 /**
  Item List
  */
@@ -282,7 +294,7 @@ a {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
     border: 0px solid transparent;
     
-    h1, p, .item-headline {
+    h3, p, .item-headline {
         color: var(--accent-color);
     }
 }
@@ -291,7 +303,7 @@ a {
     margin-bottom: 0;
 }
 
-.item-list h1 {
+.item-list h3 {
     margin-bottom: 20px;
     font-size: 1.3em;
     font-family: Montserrat-Bold;
@@ -415,23 +427,6 @@ a {
     color: var(--accent-color);
     margin: 40px 0;
     font-size: xxx-large;
-}
-
-.content h2 {
-    padding: 20px 0;
-    display: inline-block;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.content h2::before {
-    display: inline-block;
-    content: "";
-    width: 2rem;
-    height: 0.25rem;
-    margin-right: 1rem;
-    transform: translateY(-0.4rem);
-    background-color: var(--accent-color);
 }
 
 .content ul {
@@ -573,20 +568,6 @@ pre code .preprocessing {
 /**
  About page
  */
-
-.about-page h2 {
-    font-family: Montserrat-Bold;
-}
-
-.about-page h2::before {
-    display: inline-block;
-    content: "";
-    width: 2rem;
-    height: 0.25rem;
-    margin-right: 1rem;
-    transform: translateY(-0.4rem);
-    background-color: var(--accent-color);
-}
 
 .about-page ul {
     list-style-type: none;
