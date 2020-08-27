@@ -29,6 +29,8 @@ extension Node where Context == HTML.BodyContext {
             return itemList(for: items, on: site)
         case .about:
             return .aboutPage
+        case .imprint:
+            return .imprintPage
         }
         
     }
