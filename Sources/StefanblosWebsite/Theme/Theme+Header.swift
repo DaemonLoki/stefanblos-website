@@ -14,7 +14,10 @@ extension Node where Context == HTML.BodyContext {
         for context: PublishingContext<T>,
         selectedSection: T.SectionID?
     ) -> Node {
-        let sectionIDs = T.SectionID.allCases
+        //let sectionIDs = T.SectionID.allCases
+        let sectionIDs: [StefanblosWebsite.StefanBlosWebsite.SectionID] = [
+            .about, .posts
+        ]
         
         return .header(
             .wrapper(
@@ -23,9 +26,9 @@ extension Node where Context == HTML.BodyContext {
                     .nav(
                         .ul(.forEach(sectionIDs) { section in
                             .li(.a(
-                                .class(section == selectedSection ? "selected" : ""),
-                                .href(context.sections[section].path),
-                                .text(context.sections[section].title)
+                                .class(section as? T.SectionID == selectedSection ? "selected" : ""),
+                                .href(context.sections[section as! T.SectionID].path),
+                                .text(context.sections[section as! T.SectionID].title)
                                 ))
                             })
                     )

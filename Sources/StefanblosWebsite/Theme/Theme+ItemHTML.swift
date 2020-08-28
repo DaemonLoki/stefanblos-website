@@ -12,12 +12,14 @@ import Plot
 extension Node where Context == HTML.BodyContext {
     static func itemHtml<Site: Website>(for item: Item<Site>,
                                         context: PublishingContext<Site>) -> Node {
-        return .article(
-            .tagList(for: item, on: context.site),
-            .postHeader(published: item.date),
-            .div(
-                .class("content"),
-                .contentBody(item.body)
+        return .section(
+            .article(
+                .tagList(for: item, on: context.site),
+                .postHeader(published: item.date),
+                .div(
+                    .class("content"),
+                    .contentBody(item.body)
+                )
             )
         )
     }

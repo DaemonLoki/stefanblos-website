@@ -13,17 +13,22 @@ extension Node where Context == HTML.BodyContext {
     
     static func footer<T: Website>(for site: T) -> Node {
         return .footer(
-            .p(
-                .text("Generated using "),
-                .a(
-                    .text("Publish"),
-                    .href("https://github.com/johnsundell/publish")
+            .div(
+                .p(
+                    .text("Generated using "),
+                    .a(
+                        .text("Publish"),
+                        .href("https://github.com/johnsundell/publish")
+                    )
+                ),
+                .p(.a(
+                    .text("RSS feed"),
+                    .href("/feed.rss")
+                    )),
+                .p(.a(.text("Imprint"),
+                      .href("/imprint"))
                 )
-            ),
-            .p(.a(
-                .text("RSS feed"),
-                .href("/feed.rss")
-                ))
+            )
         )
     }
     
