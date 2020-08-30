@@ -56,6 +56,9 @@ body {
     color: var(--text-color);
     font-family: Poppins;
     text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
 }
 
 body p {
@@ -498,17 +501,25 @@ footer {
 footer > div {
     justify-content: center;
     display: flex;
-}
-
-footer p:not(:last-child) {
-    margin-right: 20px;
-    padding-right: 20px;
-    border-right: 1px solid #8a8a8a;
+    flex-direction: column;
 }
 
 @media(max-width: 768px) {
     .wrapper {
         padding: 40px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    
+    footer > div {
+        flex-direction: row;
+    }
+    
+    footer p:not(:last-child) {
+        margin-right: 20px;
+        padding-right: 20px;
+        border-right: 1px solid #8a8a8a;
     }
 }
 
