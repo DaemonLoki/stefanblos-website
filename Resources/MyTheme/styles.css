@@ -83,7 +83,7 @@ header {
 
 header .wrapper {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
 
 header a {
@@ -104,6 +104,7 @@ header .site-name {
         display: flex;
         text-align: center;
         align-items: center;
+        padding-bottom: 30px;
     }
     
     header .site-name {
@@ -121,18 +122,24 @@ nav {
 
 nav li {
     display: inline-block;
-    margin: 0 8px;
     line-height: 1.5em;
 
 }
 
 nav li a {
     display: inline-block;
-    padding: 8px;
+    padding: 8px 24px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+nav li a:hover {
+    background: var(--card-background-color);
+    
 }
 
 nav li a.selected {
     color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 @media (max-width: 768px) {
