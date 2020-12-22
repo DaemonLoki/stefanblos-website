@@ -37,7 +37,7 @@ First, you need to import a file into the `Resources` directory of your Playgrou
 
 ## Load the file(s)
 
-Now, on to the challenge of loading the file. They are located in the `Bundle.main` part of our little sandbox that is our Playground. We can then grab the `URL` of the file with the `Bundle.main.url(forResource:withExtension)` function. Then, we can use the initializer with the options `String(contentsOf:encoding)` to convert it to a `String`.
+Now, on to the challenge of loading the file. They are located in the `Bundle.main` part of our little sandbox that is our Playground. We can then grab the `URL` of the file with the `Bundle.main.url` function. Then, we can use the initializer with the options `String(contentsOf:encoding)` to convert it to a `String`.
 
 In order to make it reusable we can call that inside a function. We'll start off with a `.txt` file and then generalize it. See below our wonderful file loading code:
 
