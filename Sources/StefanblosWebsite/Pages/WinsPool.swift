@@ -27,5 +27,18 @@ public extension Node where Context: HTML.BodyContext {
             .p(.text("The member who's teams gather the most points comes out as the winner. Endless glory and fun awaits you!"))
         )
     }
+    
+    static var winspoolPrivacyPage: Node {
+        return .section(
+            .h2(.text("Privacy policy for Winspool")),
+            .p(.text("Your privacy is important to me. It is my policy to respect your privacy regarding any information that may be collected from you through the Winspool app.")),
+            .p(.text("i only ask for personal information when I truly need it to provide a service to you. I collect it by fair and lawful means, with your knowledge and consent. I also let you know why I'm collecting it and how it will be used.")),
+            .p(.text("I only retain collected information for as long as necessary to provide you with your requested service. I'll protect the stored data within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.")),
+            .p(.text("I don’t share any personally identifying information publicly or with third-parties, except when required to by law.")),
+            .p(.text("This app may link to external sites that are not operated by me. Please be aware that I have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.")),
+           .p(.text("Your continued use of my app will be regarded as acceptance of my practices around privacy and personal information. If you have any questions about how I handle user data and personal information, feel free to contact me via mail or the App Store.")),
+            .p(.text("This policy is effective as of 22 December 2020."))
+        )
+    }
 }
 
