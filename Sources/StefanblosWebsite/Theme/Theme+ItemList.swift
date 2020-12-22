@@ -31,8 +31,9 @@ extension Node where Context == HTML.BodyContext {
             return .aboutPage
         case .imprint:
             return .imprintPage
+        case .winspool:
+            return .winspoolPage
         }
-        
     }
     
     private static func createContent<T: Website>(for item: Item<T>, on site: T) -> Node {
