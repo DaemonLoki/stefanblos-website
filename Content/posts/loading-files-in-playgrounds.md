@@ -1,6 +1,6 @@
 ---
 date: 2020-12-22 12:00
-description: Loading files in Xcode Playgrounds
+description: How to load text and json files inside of a Xcode Playground.
 tags: swift, xcode
 ---
 
