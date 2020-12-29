@@ -72,10 +72,10 @@ First we'll create an enum called `FileExtension`. We want to use **[raw values]
 Enough with the raving about file types and on to the code:
 
 ```swift
- enum FileExtension: String {
+enum FileExtension: String {
     case txt = "txt"
     case json = "json"
-
+}
 ```
 
 This little enum now allows us to extend our `load` function to receive another parameter called `ofType` that is of type `FileExtension`.  We can use the `rawValue` of this parameter to hand to the `withExtension` parameter of the `url` call. This gives us the following function:
