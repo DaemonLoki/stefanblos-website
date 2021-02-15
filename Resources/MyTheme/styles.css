@@ -443,6 +443,12 @@ section h2::before {
     margin-bottom: 2rem;
 }
 
+.post-video {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 
 @media (min-width: 768px) {
   .content h1 {

@@ -10,7 +10,11 @@ As mentioned in [my last post](https://stefanblos.com/posts/text-in-swiftui/) mo
 
 In this post, I want to take a look at the `TextField`. It is quite surprising what capabilities the `TextField` view has when diving deep into it. But let's start off directly with the basics.
 
-(Note: If you prefer the video format [you can see the same content in my corresponding YouTube video](https://www.youtube.com/watch?v=K89ozw_l254). Let me know if you enjoy that setting more.)
+<div class="post-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K89ozw_l254" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+(Note: Let me know if you enjoy [that video](https://www.youtube.com/watch?v=K89ozw_l254) setting more.)
 
 ## Basics of TextField
 
