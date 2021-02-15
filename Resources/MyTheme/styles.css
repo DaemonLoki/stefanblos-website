@@ -439,6 +439,11 @@ section h2::before {
   font-size: x-large;
 }
 
+.content hr {
+    margin-bottom: 2rem;
+}
+
+
 @media (min-width: 768px) {
   .content h1 {
     font-size: xxx-large;
