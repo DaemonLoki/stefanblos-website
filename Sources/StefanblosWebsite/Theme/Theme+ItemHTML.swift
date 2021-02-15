@@ -27,7 +27,7 @@ extension Node where Context == HTML.BodyContext {
     private static func postHeader(published date: Date) -> Node {
         return .div(
             .class("post-head"),
-            .img(.class("post-head-image"), .src("../../images/hero.jpg"), .alt("Image of Stefan presenting to a crowd.")),
+            .img(.class("post-head-image"), .src("../../images/hero-small.jpg"), .alt("Image of Stefan presenting to a crowd.")),
             .p(.text("Stefan Blos"),.br(),
                .dateTime(for: date, className: nil))
         )

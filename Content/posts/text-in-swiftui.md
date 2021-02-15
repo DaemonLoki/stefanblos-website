@@ -12,6 +12,10 @@ One of the most common tasks when building a UI is to display text. This is why 
 
 We will go over different chapters on how to use `Text` and some of the more and some of the less common things we can do with it.
 
+<div class="post-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3BzOSIYGBdQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Basics: Views and Modifiers
 
 The first thing that is important to note is that all UI elements in SwiftUI are `View`s. This sounds rather abstract at first but if we take a closer look this only means that they have to conform to the `View` protocol.
