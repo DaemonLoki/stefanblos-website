@@ -8,9 +8,9 @@ tags: ios, natural-language, nlp
 
 Text is something that is available in most (if not all) apps on Apple's platforms. It is one of the primary ways users will interact with an application. Information can be presented to the user and it is also the most common method of collecting user input in our apps.
 
-At the same time it is quite a challenge to pull information from text. Unlike numbers there's a lot of variation and complex structure behind it. This is where one of the lesser known frameworks come in - [Natural Language](https://developer.apple.com/documentation/naturallanguage). 
+At the same time it is quite a challenge to pull information from text. Unlike numbers there's a lot of variation and complex structure behind it. This is where one of the lesser known frameworks comes in - [Natural Language](https://developer.apple.com/documentation/naturallanguage). 
 
-This framework is available on nearly all of the platforms, namely iOS, macOS, tvOS and watchOS. Therefore, it's a valuable ressource that can be extremely useful to know about.
+This framework is available on nearly all of the platforms, namely iOS, macOS, tvOS and watchOS. Therefore, it's a valuable resource that can be extremely useful to know about.
 
 It has some really powerful capabilities that I want to quickly introduce in this overview article. I will also go into more detail on how to use these different options in separate articles. Here, I want to give a short and concise outline of what is possible.
 
@@ -18,7 +18,7 @@ It has some really powerful capabilities that I want to quickly introduce in thi
 
 ## Language identification
 
-One of the first and easiest to understand use-cases is [identifying the language of a text](https://developer.apple.com/documentation/naturallanguage/identifying_the_language_in_text). Putting in a simple `String` the framework will give us the most probable language that the text is written in (or in a fact a number of suggestions).
+One of the first and easiest to understand use-cases is [identifying the language of a text](https://developer.apple.com/documentation/naturallanguage/identifying_the_language_in_text). Putting in a simple `String` the framework will give us the most probable language that the text is written in (or in fact a number of suggestions).
 
 How can we use that in our apps? There are two use-cases that directly come up in my mind. The first one is to identify the language the user puts into our app. While we could also use the `locale` this might actually not be the best solution. Some people (including me) don't have their phone set to their native language but rather something more common like English. If we still want to keep the option of presenting the content to our user in his/her favorite language we could offer an option in these cases.
 
