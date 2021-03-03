@@ -7,6 +7,7 @@ try StefanBlosWebsite().publish(
         .addMarkdownFiles(),
         .copyResources(),
         .generateHTML(withTheme: .myTheme),
+        .generateRSSFeed(including: Set(StefanBlosWebsite.SectionID.allCases)),
         .generateSiteMap()
     ]
 )
