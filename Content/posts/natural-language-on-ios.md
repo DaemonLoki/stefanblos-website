@@ -42,9 +42,9 @@ So this is something to definitely consider when needing to split up a `String` 
 
 ## Lemmatization
 
-The process of lemmatization - also called stemming - allows for transforming a word to its basic structure. Let's look at a little example to make this more clear.
+The process of lemmatization - also called stemming - allows for transforming a word into its basic structure. Let's look at a little example to make this more clear.
 
-Assume you want to implement a text-based search in your app. The user can enter a `String` and you will check the content of the app to match that `String`. When the user enters a word like **"playing"** it will only match all the exact same words. What if one piece of content has the word **"played"** in it. Is that a potential match?
+Assume you want to implement text-based search in your app. The user can enter a `String` and you will check the content of the app to match that `String`. When the user enters a word like **"playing"** it will only match all the exact same words. What if one piece of content has the word **"played"** in it. Is that a potential match?
 
 Of course, this depends on the use-case but it most certainly can be. A basic regex comparison will not catch that. This is where lemmatization kicks in. It will take a word (e.g. **"playing"**, **"played"**) and transform it to its basic form (here: **"play"**). This makes the search instantly more comprehensive. 
 
@@ -66,7 +66,7 @@ Also, these embeddings can again be used to feed into more complex language mode
 
 This technique allows for recognition of [people, places and organizations](https://developer.apple.com/documentation/naturallanguage/identifying_people_places_and_organizations) in text. It gives us the ability to identify these entities without doing any extra work. 
 
-Therefore it could enrich our abilities to show our users relevant information. In a messaging app it might show context when discussing about a place to visit or show the stock price of an organization without the user to explicitly ask for it. 
+Therefore it could enrich our abilities to show our users relevant information. In a messaging app it might show context when discussing about a place to visit or show the stock price of an organization without the user needing to explicitly ask for it. 
 
 These might sound like small additions but - depending on the app we're building - we can achieve quite magical results with this kind of smart features built into our apps.
 
@@ -74,7 +74,7 @@ These might sound like small additions but - depending on the app we're building
 
 Similar to named entitiy recognition we can also use the `Natural Language` framework to identify the parts of a sentence, such as nouns, verbs and adjectives. This is a huge help if we try to understand intentions of the input the user is providing us.
 
-This task is performed everytime we input a command into a voice assistant like Siri, Alexa or the Google Assistant. It deconstructs the statement into its integral parts and tries to deduce an action based on the elements it finds.
+This task is performed everytime we input a command into a voice assistant like Siri, Alexa or Google Assistant. It deconstructs the statement into its integral parts and tries to deduce an action based on the elements it finds.
 
 Again, by using part of speech tagging we can try to better understand what the user tries to input into our apps. 
 
@@ -94,7 +94,7 @@ This post is intended to give you a broad understanding of what is even possible
 
 I think this is an excellent question and exactly the right approach. Instead of just putting it into our apps because it is hype we should ask ourselves how we can improve the experience for our users and give our apps superpowers.
 
-With this article I hope to have shown you a few examples of what is possible once more developers will just see machine learning and natural language processing as part of their toolbelt to build great apps and enrichen the lives of many. 
+With this article I hope to have shown you a few examples of what is possible once more developers will just see machine learning and natural language processing as part of their toolbelt to build great apps and enrich the lives of many. 
 
 I will cover the technical implementations in a series of future posts, so stay tuned for that. If you have questions or other feedback I'd love to hear from you [on Twitter](https://twitter.com/stefanjblos). My DMs are always open, also if you like to discuss ideas and potential use-cases.
 
