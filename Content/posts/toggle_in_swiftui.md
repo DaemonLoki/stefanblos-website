@@ -13,11 +13,9 @@ We will explore the different options to configure the `Toggle`, how it behaves 
 Now for everyone wondering, this is a `Toggle` (with an ***active*** state on the left and an ***inactive*** state on the right): 
 
 <figure>
-    <div class="post-image-gallery">
         <img class="small-image" src="../../images/posts/toggle-in-swiftui/toggle_active.png" alt="Active toggle in SwiftUI." />
         <img class="small-image" src="../../images/posts/toggle-in-swiftui/toggle_inactive.png" alt="Inactive toggle in SwiftUI." />
-    </div>
-    <figcaption>Active toggle on the left and inactive toggle on the right.</figcaption>
+    <figcaption>Active toggle on the top and inactive toggle at the bottom.</figcaption>
 </figure>
 
 
@@ -116,7 +114,7 @@ Simply said we can build our custom `Toggle` UI within our style and get its pro
 We will build a custom style called `DarkModeStyle` which can be used for any `Toggle` that will allow users to switch between light and dark mode. Here is a preview:
 
 <video name="Sample video" class="small-image" controls="controls"
-src="../../images/posts/toggle-in-swiftui/toggle_preview.mov"></video>
+src="../../images/posts/toggle-in-swiftui/toggle_preview.mp4"></video>
 
 Note: It is fun to play around with custom styles. Just remember that it should always follow a funciton. It doesn't help the user if we create the fanciest animations just for the sake of doing it. Also, always keep accessibility in mind.
 
