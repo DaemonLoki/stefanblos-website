@@ -407,6 +407,10 @@ section h2::before {
   margin-bottom: 0;
 }
 
+.post-image-gallery {
+    display: flex;
+}
+
 .item-page .tag-list {
   display: inline-block;
 }
