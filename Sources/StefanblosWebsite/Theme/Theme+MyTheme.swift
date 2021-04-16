@@ -25,7 +25,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                        context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site),
+            .myHead(for: index, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
@@ -48,7 +48,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: section, on: context.site),
+            .myHead(for: section, on: context.site),
             .body(
                 .header(for: context, selectedSection: section.id),
                 .wrapper(
@@ -64,7 +64,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: item, on: context.site),
+            .myHead(for: item, on: context.site),
             .body(
                 .class("item-page"),
                 .header(for: context, selectedSection: item.sectionID),
@@ -80,7 +80,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .myHead(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(.contentBody(page.body)),
@@ -93,7 +93,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .myHead(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
@@ -120,7 +120,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                             context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site),
+            .myHead(for: page, on: context.site),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
@@ -151,5 +151,61 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
 extension Node where Context == HTML.BodyContext {
     static func wrapper(_ nodes: Node...) -> Node {
         .div(.class("wrapper"), .group(nodes))
+    }
+}
+
+public extension Node where Context == HTML.DocumentContext {
+    
+    static func myHead<T: Website>(
+        for location: Location,
+        on site: T,
+        titleSeparator: String = " | ",
+        stylesheetPaths: [Path] = ["/styles.css"],
+        rssFeedPath: Path? = .defaultForRSSFeed,
+        rssFeedTitle: String? = nil
+    ) -> Node {
+        var title = location.title
+
+        if title.isEmpty {
+            title = site.name
+        } else {
+            title.append(titleSeparator + site.name)
+        }
+
+        var description = location.description
+
+        if description.isEmpty {
+            description = site.description
+        }
+
+        return .head(
+            .encoding(.utf8),
+            .siteName(site.name),
+            .url(site.url(for: location)),
+            .title(title),
+            .description(description),
+            .twitterCardType(location.imagePath == nil ? .summary : .summaryLargeImage),
+            .forEach(stylesheetPaths, { .stylesheet($0) }),
+            .viewport(.accordingToDevice),
+            .unwrap(site.favicon, { .favicon($0) }),
+            .unwrap(rssFeedPath, { path in
+                let title = rssFeedTitle ?? "Subscribe to \(site.name)"
+                return .rssFeedLink(path.absoluteString, title: title)
+            }),
+            .unwrap(location.imagePath ?? site.imagePath, { path in
+                let url = site.url(for: path)
+                return .socialImageLink(url)
+            }),
+            .raw(
+            """
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5VTV5GJ');</script>
+            <!-- End Google Tag Manager -->
+            """)
+        )
     }
 }
