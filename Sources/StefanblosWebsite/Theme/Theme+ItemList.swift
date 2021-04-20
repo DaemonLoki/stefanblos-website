@@ -16,7 +16,8 @@ extension Node where Context == HTML.BodyContext {
             .forEach(items) { item in
                 .li(
                     createContent(for: item, on: site)
-                )}
+                )
+            }
         )
     }
     
