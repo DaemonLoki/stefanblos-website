@@ -4,8 +4,6 @@ description: Learn how to identify languages in a String using the Natural Langu
 tags: natural-language, nlp
 ---
 
-
-
 # Language identification on iOS
 
 On a previous post we took a look at the [`Natural Language` framework](https://stefanblos.com/posts/natural-language-on-ios/) in general. We discussed the different use-cases it has and examples for when and how to use it. If you need a refresher on that I also recommend [watching the video I made on the topic](https://www.youtube.com/watch?v=9biaLAkcdjs).
@@ -26,7 +24,7 @@ Note: We also need to import the `NaturalLanguage` framework in order for this c
 
 Next, we need a `String` that we can process. This will also be the same for all following steps so let's do that once.
 
-First, we create a `String` where we like to determine the language (feel free to use any `String` you like). Then, we call the `processString(_:String)`  method on our `recognizer`.
+First, we create a `String` where we like to determine the language (feel free to use any `String` you like). Then, we call the `processString(_:String)` method on our `recognizer`.
 
 ```swift
 let toDetect = "The force is strong in this one"
@@ -37,7 +35,7 @@ Note: when we want to work with multiple `Strings` we have to call `.reset()` on
 
 ## Predicting the Language
 
-After having processed a `String` we can use the `dominantLanguage` property of the `recognizer` instance to receive an optional `NLLanguage?` entity. As can be seen [in the documentation](https://developer.apple.com/documentation/naturallanguage/nllanguage) it has a `rawValue` (of type `String`) that gives us the desired prediction of the language in short form (e.g. `en` for English). 
+After having processed a `String` we can use the `dominantLanguage` property of the `recognizer` instance to receive an optional `NLLanguage?` entity. As can be seen [in the documentation](https://developer.apple.com/documentation/naturallanguage/nllanguage) it has a `rawValue` (of type `String`) that gives us the desired prediction of the language in short form (e.g. `en` for English).
 
 It is an optional value so if our `recognizer` fails to predict a language it will be `nil`. To access the value we can do this:
 
@@ -81,7 +79,7 @@ The advantage of using the hypothesis is that we also get a probability. If that
 
 ## Limiting/assisting the predictions
 
-While the aforementioned examples should cover most use-cases there is two more things we can do. 
+While the aforementioned examples should cover most use-cases there is two more things we can do.
 
 First, we are able to configure our `recognizer` to only look for a certain set of languages by using the `languageConstraints` property. It can be set to an array of `NLLanguage` objects:
 
@@ -89,7 +87,7 @@ First, we are able to configure our `recognizer` to only look for a certain set 
 recognizer.languageConstraints = [.english, .german, .french, .spanish]
 ```
 
-This limits the amount of languages that can be detected. 
+This limits the amount of languages that can be detected.
 
 If we want to go even further we can use the `languageHints` configuration which takes a `Dictionary` of `[NLLanguage: Double]` pairs and allows us to pre-configure our `recognizer` with some probabilities for languages we know:
 
