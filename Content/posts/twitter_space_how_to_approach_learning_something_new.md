@@ -79,15 +79,14 @@ It is a chill atmosphere and aimed at having a good time with a nice conversatio
 
 ### 3. Learning types and ways
 
-
-#### different levels of abstraction:
+#### Different levels of abstraction:
 
 * Apple documentation → direct, tedious
 * follow-along tutorials → has bias, content is prepared
 * videos, blog posts → most convenient, learning is done by someone else
 * sample projects → direct, time-consuming, work great for learning
 
-#### sometimes challenge with tutorials:
+#### Sometimes challenge with tutorials:
 
 * Be careful and thoughtful when consuming tutorials
 * People always always bring in their own opinions
@@ -95,7 +94,7 @@ It is a chill atmosphere and aimed at having a good time with a nice conversatio
 * this was wrong, because it was only the opinion of the creator
 * if you find solutions that work you, it’s completely fine
 
-#### mental models of learning: (you have to figure out what works for you)
+#### Mental models of learning: (you have to figure out what works for you)
 
 * visual
 * auditory
