@@ -10,6 +10,8 @@ A while ago [Jeroen](https://twitter.com/AppForce1) and [me](https://twitter.com
 
 It is a chill atmosphere and aimed at having a good time with a nice conversation amongst friends. If you want to be kept in the loop of what’s happening when the best approach is to follow both [Jeroen](https://twitter.com/AppForce1) and [me](https://twitter.com/stefanjblos) on Twitter as we take turns in hosting these events.
 
+If you're interested in listening to the recording of the Space you can do this either directly [on Twitter](https://twitter.com/stefanjblos/status/1488987360968720389?s=20&t=FjHod39MIgBOTA7RQHEz6Q) or if you prefer a podcast then it can also be found [on Jeroen's feed](https://www.buzzsprout.com/1414396/10017728-twitter-space-ios-coffee-chat-how-to-learn-new-things).
+
 
 ## 1. How did we learn iOS Development?
 
@@ -25,7 +27,7 @@ It is a chill atmosphere and aimed at having a good time with a nice conversatio
 
 * Java Dev for ages. Got an iPod, got a mac, switched to iOS then switched jobs to be able to go all in.
 * Big Nerd Ranch book was my entry
-* Did a proof of concept with using CorePlot. Did a tiny bug fix even. https://github.com/core-plot/core-plot/commit/32858fb85d528823194512c5baf22ffaf7ce07fb
+* Did a proof of concept with using CorePlot. Did a tiny bug fix even. ([Commit to be found here](https://github.com/core-plot/core-plot/commit/32858fb85d528823194512c5baf22ffaf7ce07fb)) 
 * Then went head first into a new job working on the ING Banking App, learning on the job really.
 
 ## 2. What are sources of information?
@@ -119,6 +121,6 @@ It is a chill atmosphere and aimed at having a good time with a nice conversatio
 * Very much motivated in my direction and pace by what I need right now, just in time knowledge acquisition really.
     
 
-Once again, we’re doing regular Twitter Spaces about topics from the community. They are happening on sWednesdays at alternating times to allow people from all timezones to participate.
+Once again, we’re doing regular Twitter Spaces about topics from the community. They are happening on Wednesdays at alternating times to allow people from all timezones to participate.
 
 If you want to get notified when they are happening you should follow [me](https://twitter.com/stefanjblos) and [Jeroen](https://twitter.com/AppForce1) on Twitter.
