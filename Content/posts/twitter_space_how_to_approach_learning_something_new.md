@@ -6,7 +6,7 @@ tags: ios, twitter-spaces
 
 # Notes: How to approach learning new things?
 
-A while ago [Jeroen](https://twitter.com/AppForce1) and [me](https://twitter.com/stefanjblos) started doing regular Twitter Spaces that are loosely based on a topic revolving around the iOS community, our jobs in the space, or general development advice we can think of. Everyone is welcome to come up and share their thoughts because we love to hear from the community and their takes on the topics. 
+A while ago [Jeroen](https://twitter.com/AppForce1) and [me](https://twitter.com/stefanjblos) started doing regular Twitter Spaces that are loosely based on a topic revolving around the iOS community, our common jobs in the space (we are both working at [Stream](https://getstream.io)), or general development advice we can think of. Everyone is welcome to come up and share their thoughts because we love to hear from the community and their takes on the topics. 
 
 It is a chill atmosphere and aimed at having a good time with a nice conversation amongst friends. If you want to be kept in the loop of what’s happening when the best approach is to follow both [Jeroen](https://twitter.com/AppForce1) and [me](https://twitter.com/stefanjblos) on Twitter as we take turns in hosting these events.
 
@@ -119,6 +119,6 @@ It is a chill atmosphere and aimed at having a good time with a nice conversatio
 * Very much motivated in my direction and pace by what I need right now, just in time knowledge acquisition really.
     
 
-Once again, we’re doing regular Twitter Spaces about topics from the community. They are happening on Wednesdays at alternating times to allow people from all timezones to participate.
+Once again, we’re doing regular Twitter Spaces about topics from the community. They are happening on sWednesdays at alternating times to allow people from all timezones to participate.
 
 If you want to get notified when they are happening you should follow [me](https://twitter.com/stefanjblos) and [Jeroen](https://twitter.com/AppForce1) on Twitter.
