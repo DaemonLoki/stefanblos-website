@@ -430,7 +430,7 @@ h4 {
 .content > p {
   line-height: 1.8rem;
   margin-bottom: 30px;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
 }
 
 .content strong {
@@ -467,6 +467,7 @@ h4 {
 }
 
 .content li {
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
@@ -564,7 +565,7 @@ footer > div {
  */
 
 code {
-  font-size: 1.4em;
+  font-size: 1.1rem;
   color: var(--code-color);
   padding: 0 0.25rem;
 }
@@ -581,7 +582,7 @@ pre code {
   padding: 0 20px;
   color: #a9bcbc;
   line-height: 1.4em;
-  font-size: 1.2em;
+  font-size: 1.1rem;
   overflow-x: auto;
   white-space: pre;
   -webkit-overflow-scrolling: touch;
