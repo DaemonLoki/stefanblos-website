@@ -1,6 +1,7 @@
 ---
 date: 2022-04-09 10:00
 description: Getting started with variables and constants in the Swift language in a beginner-friendly way.
+image: images/previews/basics-variables-and-constants.png
 tags: basics, swift
 ---
 
