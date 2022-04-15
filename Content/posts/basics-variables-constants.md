@@ -65,7 +65,7 @@ var age: Int = 31
 var name: String = "Taylor Swift"
 ```
 
-Putting a color after the variable name and specifying it as an `Int` (= number) or `String` (= text) helps Swift to specifically set the type of value the variable will have.
+Putting a colon after the variable name and specifying it as an `Int` (= number) or `String` (= text) helps Swift to specifically set the type of value the variable will have.
 
 The last thing we want to have a look at are constants.  If you know a value will never change over time, then we can specify it as a constant with the `let` keyword in Swift.
 
