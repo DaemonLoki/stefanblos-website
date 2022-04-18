@@ -48,7 +48,7 @@ struct AnimatingNumberView: View {
 This won’t work as we see in the video:
 
 <video name="Incorrect animation" class="medium-image" controls="controls"
-src="../../images/posts/animating-number-changes/animating-wrong.mov"></video>
+src="../../images/posts/animating-number-changes/animation-wrong.mov"></video>
 
 It will animate the container width of the view but not the number itself. Why is that?
 
@@ -147,7 +147,7 @@ There are two things that have changed and I marked them in code so you know whi
 When we look at the end result, we can be very happy with it:
 
 <video name="Correct animation" class="medium-image" controls="controls"
-src="../../images/posts/animating-number-changes/animating-right.mov"></video>
+src="../../images/posts/animating-number-changes/animation-right.mov"></video>
 
 ## Summary
 
