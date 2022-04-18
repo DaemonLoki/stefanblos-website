@@ -13,7 +13,7 @@ One of the things I love most about SwiftUI is the animation system. It really m
 There is an animation, however, where I think there is not a really intuitive way to create it:
 
 <video name="Animating numbers preview" class="medium-image" controls="controls"
-src="../../images/posts/animating-numbers-changes/animating-numbers-preview.mov"></video>
+src="../../images/posts/animating-number-changes/animating-numbers-preview.mov"></video>
 
 We’ll be going through the steps of implementing it (it’s not hard) and I’ll describe the workarounds we need to do here, but let’s start off with the way I would have assumed it to work first.
 
@@ -48,7 +48,7 @@ struct AnimatingNumberView: View {
 This won’t work as we see in the video:
 
 <video name="Incorrect animation" class="medium-image" controls="controls"
-src="../../images/posts/animating-numbers-changes/animating-wrong.mov"></video>
+src="../../images/posts/animating-number-changes/animating-wrong.mov"></video>
 
 It will animate the container width of the view but not the number itself. Why is that?
 
@@ -147,7 +147,7 @@ There are two things that have changed and I marked them in code so you know whi
 When we look at the end result, we can be very happy with it:
 
 <video name="Correct animation" class="medium-image" controls="controls"
-src="../../images/posts/animating-numbers-changes/animating-right.mov"></video>
+src="../../images/posts/animating-number-changes/animating-right.mov"></video>
 
 ## Summary
 
