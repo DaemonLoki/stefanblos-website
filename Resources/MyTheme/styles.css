@@ -464,8 +464,9 @@ h4 {
   }
 }
 
-.content ul {
-  margin-top: 40px;
+.content ul,
+ol {
+  padding-left: 1rem;
   margin-bottom: 40px;
   list-style-position: inside;
 }
