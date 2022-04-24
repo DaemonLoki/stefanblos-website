@@ -109,6 +109,22 @@ public extension Node where Context: HTML.BodyContext {
     static var myExperience: Node {
         
         let experiences = [
+            Experience(
+                name: "iOS Developer Relations Engineer",
+                company: "Stream",
+                props: [
+                    SkillProperty(
+                        headline: "Content creation",
+                        description: "Building samples from our SDK to showcase potential use-cases, blogging, creating Youtube-videos and doing Open-Source work and projects."),
+                    SkillProperty(
+                        headline: "Engineering and project work",
+                        description: "Being involved in product development, working in an agile environment, finding potential improvements to the SDK and the overall exposure of the engineering team and work."),
+                    SkillProperty(
+                        headline: "Community work",
+                        description: "Strong presence in the social channels (Twitter, Reddit, Stackoverflow, Discord, etc.), speaking at conferences, interacting via Twitter Spaces and/or podcasts."
+                    )
+                ]
+            ),
             Experience(name: "Software developer", company: "CodeCamp:N", props: [
                 SkillProperty(headline: "Web development", description: "Building accessible websites in small teams with React, GatsbyJS, Storybook and TailwindCSS"),
                 SkillProperty(headline: "Backend", description: "Creating scalable backend software in Python and JS with AWS, AWS Lambda and EC2"),
