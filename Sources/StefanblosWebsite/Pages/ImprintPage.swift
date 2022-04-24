@@ -17,9 +17,9 @@ public extension Node where Context: HTML.BodyContext {
             .p(
                 .text("Stefan Blos"),
                 .br(),
-                .text("St.-Martin-Str. 17"),
+                .text("Stettiner Straße 18"),
                 .br(),
-                .text("91330 Eggolsheim")),
+                .text("91320 Ebermannstadt")),
             .h2(
                 .text("Contact")),
             .p(
