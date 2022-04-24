@@ -2,6 +2,7 @@
   --accent-color: #15b097;
   --background-color: #edf2ef;
   --card-background-color: #e7eeea;
+  --card-background-color-hover: #c9d9d0;
   --text-color: #424242;
   --code-color: #1f5b45;
 }
@@ -11,6 +12,7 @@
     --accent-color: #d1d646;
     --background-color: #292f36;
     --card-background-color: #23282f;
+    --card-background-color-hover: #0d0f12;
     --text-color: #e3e4e5;
     --code-color: #d1d646;
   }
@@ -28,23 +30,23 @@
 
 @font-face {
   font-family: Montserrat;
-  src: url(/fonts/Montserrat-Regular.ttf) format('truetype');
+  src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url(/fonts/Montserrat-Bold.ttf) format('truetype');
+  src: url(/fonts/Montserrat-Bold.ttf) format("truetype");
   font-weight: black;
 }
 
 @font-face {
   font-family: Poppins;
-  src: url(/fonts/Poppins-Regular.ttf) format('truetype');
+  src: url(/fonts/Poppins-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url(/fonts/Poppins-Bold.ttf) format('truetype');
+  src: url(/fonts/Poppins-Bold.ttf) format("truetype");
 }
 
 /**
@@ -139,7 +141,7 @@ nav li a {
 }
 
 nav li a:hover {
-  background: var(--card-background-color);
+  background: var(--card-background-color-hover);
 }
 
 nav li a.selected {
@@ -192,7 +194,7 @@ nav li a.selected {
 
 .hero-section .intro-text::before {
   display: inline-block;
-  content: '';
+  content: "";
   width: 4rem;
   height: 0.25rem;
   margin-right: 1rem;
@@ -260,7 +262,7 @@ section h2 {
 
 section h2::before {
   display: inline-block;
-  content: '';
+  content: "";
   width: 2rem;
   height: 0.25rem;
   margin-right: 1rem;
@@ -658,7 +660,6 @@ pre code .preprocessing {
 }
 
 .social-section li:hover {
-  transform: scale(1.01, 1.01);
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
   border: 0px solid transparent;
