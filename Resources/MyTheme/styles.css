@@ -142,6 +142,7 @@ nav li a {
 
 nav li a:hover {
   background: var(--card-background-color-hover);
+  border-radius: 0.5rem;
 }
 
 nav li a.selected {
@@ -304,8 +305,9 @@ h4 {
 
 .item-list > li:hover {
   transform: scale(1.01, 1.01) translateY(-5px);
+  background: var(--card-background-color-hover);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
-  border: 0px solid transparent;
+  border: 1px solid transparent;
 }
 
 .item-headline {
