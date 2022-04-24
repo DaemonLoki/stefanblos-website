@@ -166,3 +166,19 @@ I challenge you to do this and make sure to [tweet your awesome ideas and ways a
 There is also a fantastic series about animations (and much, much more) [from The SwiftUI Lab](https://swiftui-lab.com), which you can also [find on Twitter](https://twitter.com/SwiftUILab).
 
 Hopefully, you learned something interesting from this article. If you enjoyed that you can also have a look at [my other articles](https://stefanblos.com) or [my Youtube Channel](https://www.youtube.com/channel/UC63d2z58E_Xm76yXMsyxksQ).
+
+Add-on: I love Twitter. I was very lucky that I had [Matt](https://twitter.com/kingatarthur?s=21&t=grvUUbdnlE907-Q-5-1xjQ) reach out to me and share how we can fix the fact that `Int`s are not animating here. It's incredibly simple and I want to copy it into the article, but you can [find the original code he shared here](https://gist.github.com/mattyoung/3de3b6891a8eccbbce036d54e7611b57)):
+
+```swift
+extension Int: VectorArithmetic {
+    mutating public func scale(by rhs: Double) {
+        self = Int(Double(self) * rhs)
+    }
+
+    public var magnitudeSquared: Double {
+        Double(self * self)
+    }
+}
+```
+
+With this snippet we can then use an `Int` in our `AnimatableModifier` and it animates smoothly. Thanks again Matt!
