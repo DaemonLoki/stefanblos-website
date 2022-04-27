@@ -15,6 +15,7 @@ The hosts of this show were [Stefan](https://twitter.com/stefanjblos) and [Amos]
 ### Introduction and welcome
 
 1. We mentioned [the release tweet](https://twitter.com/stefanjblos/status/1518609926922330114?s=20&t=WYTPRs8a8gPr7z2jEwlFzA), [the download link](https://apps.apple.com/us/app/motionscape-animation-studio/id1616840951?utm_source=macapplestore&utm_campaign=twitter), and that people should check it out and have a look [at the open-source repo](https://github.com/GetStream/motionscape-app)
+
 2. Why shoud people star the repo? 
     * Because it allows us to keep working on it 
     * As luckily our employer [Stream](https://getstream.io) is kind enough to let us work on it
@@ -27,9 +28,13 @@ The hosts of this show were [Stefan](https://twitter.com/stefanjblos) and [Amos]
     - Solution (but only for web): 
         * [https://easings.net/](https://easings.net/) 
         * [https://cubic-bezier.com/](https://cubic-bezier.com/)
+        
 2. We both thought that it was cool and fun to play around to get them right
+
 3. Stefan created a little example with some controls that set parameters
+
 4. Amos said: I always wanted to do that and create an app for that after seeing an example from CodePen.
+
 5. We both said: let’s do it
 
 ### How did we approach it?
@@ -38,12 +43,15 @@ The hosts of this show were [Stefan](https://twitter.com/stefanjblos) and [Amos]
     - Clear that we wanted to open-source it
     - Make it fun and free
     - Not bloated, but just put in a few examples and maybe even explanations
+    
 2. There’s only a limited number of different animations so we decided to start with the bare minimum
     - created a list of things we wanted to have in our MVP that we thought to be “releasable”
     - cut out the unnecessary things for later versions (not everything has to be in, if we want everything perfect we wouldn’t ever ship it)
+    
 3. Include a few examples, add parameters to play around within a very simple UI
     - Use basic UI components where possible
     - go for functionality instead of fancy design (Example: drag-and-drop the dots of easing-graphs
+    
 4. List of features to include:
     - Spring animation support
     - Easings/interpolations support
@@ -74,10 +82,10 @@ The hosts of this show were [Stefan](https://twitter.com/stefanjblos) and [Amos]
 
 ## Kindly share and like this to support us and the project:
 
-- [https://twitter.com/stefanjblos/status/1518609926922330114?s=20&t=KdJYHhwC01WnS-CgHnlV-g](https://twitter.com/stefanjblos/status/1518609926922330114?s=20&t=KdJYHhwC01WnS-CgHnlV-g)
-- [https://github.com/GetStream/motionscape-app](https://github.com/GetStream/motionscape-app)
-- [https://www.linkedin.com/feed/update/urn:li:activity:6924378175850299393/](https://www.linkedin.com/feed/update/urn:li:activity:6924378175850299393/)
-- [https://apps.apple.com/us/app/motionscape-animation-studio/id1616840951](https://apps.apple.com/us/app/motionscape-animation-studio/id1616840951)
+- [Release tweet](https://twitter.com/stefanjblos/status/1518609926922330114?s=20&t=KdJYHhwC01WnS-CgHnlV-g)
+- [Github repository](https://github.com/GetStream/motionscape-app)
+- [LinkedIn post about release](https://www.linkedin.com/feed/update/urn:li:activity:6924378175850299393/)
+- [Mac App Store Link](https://apps.apple.com/us/app/motionscape-animation-studio/id1616840951)
 
 ## Listener Requested Links
 

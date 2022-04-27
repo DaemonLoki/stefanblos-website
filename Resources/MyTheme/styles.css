@@ -448,6 +448,10 @@ h4 {
   font-size: x-large;
 }
 
+.content h3 {
+    margin: 20px 0;
+}
+
 .content hr {
   margin-bottom: 2rem;
 }
