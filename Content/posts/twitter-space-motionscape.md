@@ -5,7 +5,7 @@ image: images/previews/twitter-space-motionscape.png
 tags: ios, twitter-spaces
 ---
 
-# 2022-04-27 MotionScape - a free, open-source tool for prototyping animations
+# Twitter Space: MotionScape - building a free, open-source Mac app
 
 ## Outline
 
