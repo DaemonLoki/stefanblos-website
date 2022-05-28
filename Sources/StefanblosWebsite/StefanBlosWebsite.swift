@@ -27,5 +27,5 @@ struct StefanBlosWebsite: Website {
     var description = "Personal blog of Stefan Blos"
     var language: Language { .english }
     var favicon: Favicon? { Favicon()}
-    var imagePath: Path? { nil }
+    var imagePath: Path? { "images/header_dark.png" }
 }
