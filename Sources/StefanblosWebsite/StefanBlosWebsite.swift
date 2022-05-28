@@ -17,6 +17,7 @@ struct StefanBlosWebsite: Website {
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
+        
         // Add any site-specific metadata that you want to use here.
     }
 
@@ -25,5 +26,6 @@ struct StefanBlosWebsite: Website {
     var name = "Stefan Blos"
     var description = "Personal blog of Stefan Blos"
     var language: Language { .english }
+    var favicon: Favicon? { Favicon()}
     var imagePath: Path? { nil }
 }
