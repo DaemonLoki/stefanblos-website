@@ -47,10 +47,10 @@ Let’s look at an example:
 
 ```swift
 /* Eligibility is dependent on a lot of factors:
-		These include:
-			* Age
-			* Experience
-			* Education
+    These include:
+    * Age
+    * Experience
+    * Education
 */
 var eligible = true
 ```
