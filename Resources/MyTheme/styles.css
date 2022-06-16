@@ -403,13 +403,41 @@ h4 {
 
 .post-head-image {
   width: 100%;
-  object-fit: contain;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 2px solid var(--text-color);
+  overflow: hidden;
+  
+}
+
+.post-head-image img {
+    object-fit: contain;
+    transition: transform .3s ease-out;
+}
+
+.post-head-image:hover img {
+    transform: scale(1.1);
 }
 
 .post-head p {
   margin-bottom: 0;
+}
+
+.post-head a {
+    display: flex;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.post-head a:hover {
+    text-decoration: underline;
+}
+
+.post-head svg {
+    fill: var(--text-color);
+    width: 24px;
+    aspect-ratio: 1;
+    margin-left: 0.5rem;
 }
 
 .post-image-gallery {
@@ -423,7 +451,6 @@ h4 {
 .item-page time {
   display: block;
   opacity: 50%;
-  margin-top: 8px;
 }
 
 .content {

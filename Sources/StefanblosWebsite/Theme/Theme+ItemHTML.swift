@@ -27,9 +27,20 @@ extension Node where Context == HTML.BodyContext {
     private static func postHeader(published date: Date) -> Node {
         return .div(
             .class("post-head"),
-            .img(.class("post-head-image"), .src("../../images/hero-small.jpg"), .alt("Image of Stefan presenting to a crowd.")),
-            .p(.text("Stefan Blos"),.br(),
-               .dateTime(for: date, className: nil))
+            .div(.class("post-head-image"),
+                 .img(
+                    .src("../../images/hero-small.jpg"),
+                    .alt("Image of Stefan presenting to a crowd.")
+                 )
+            ),
+            .p(
+                .a(
+                    .href(URL(string: "https://twitter.com/stefanjblos")!),
+                    .span(.text("Stefan Blos")),
+                    .createSVG(viewBox: "0 0 24 24", path: .twitterPath)
+                ),
+                .dateTime(for: date, className: nil)
+            )
         )
     }
 }
