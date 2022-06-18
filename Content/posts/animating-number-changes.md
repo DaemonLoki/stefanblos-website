@@ -12,7 +12,7 @@ One of the things I love most about SwiftUI is the animation system. It really m
 
 There is an animation, however, where I think there is not a really intuitive way to create it:
 
-<video name="Animating numbers preview" class="medium-image" controls="controls"
+<video name="Animating numbers preview" class="medium-image rounded-video" controls="controls"
 src="../../images/posts/animating-number-changes/animating-numbers-preview.mov"></video>
 
 We’ll be going through the steps of implementing it (it’s not hard) and I’ll describe the workarounds we need to do here, but let’s start off with the way I would have assumed it to work first.
@@ -47,7 +47,7 @@ struct AnimatingNumberView: View {
 
 This won’t work as we see in the video:
 
-<video name="Incorrect animation" class="medium-image" controls="controls"
+<video name="Incorrect animation" class="medium-image rounded-video" controls="controls"
 src="../../images/posts/animating-number-changes/animation-wrong.mov"></video>
 
 It will animate the container width of the view but not the number itself. Why is that?
@@ -63,8 +63,7 @@ While the term interpolation sounds fancy, it’s not a complicated concept. If 
 3. Slowly add portions of the difference (`200`) to the start value for each update interval (= each new frame) so that after 1 second we have the final value
 
 <aside>
-💡 Note: this describes a `linear` interpolation. For other animation types, the chunks that are added over time might slow down (`easeOut`) or speed up (`easeIn`) over time.
-
+<p>💡 Note: this describes a <code>linear</code> interpolation. For other animation types, the chunks that are added over time might slow down (<code>easeOut</code>) or speed up (<code>easeIn</code>) over time.</p>
 </aside>
 
 For the animation of the number value over time the animation system doesn’t understand what it needs to animate here so it takes its best guess, which is the width. Fortunately, we can fix this by manually telling the system what we want to animate and how to do it over time...with the `AnimatableModifier` protocol.
@@ -146,7 +145,7 @@ There are two things that have changed and I marked them in code so you know whi
 
 When we look at the end result, we can be very happy with it:
 
-<video name="Correct animation" class="medium-image" controls="controls"
+<video name="Correct animation" class="medium-image rounded-video" controls="controls"
 src="../../images/posts/animating-number-changes/animation-right.mov"></video>
 
 ## Summary
