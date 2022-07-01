@@ -62,12 +62,9 @@ The library in Xcode (shortcut to bring it up: CMD + SHIFT + L) now includes all
 
 There is also a new functionality where error messages are dimmed while they are being reprocessed. When they are solved they will go away after that, if not they will turn red (or in the case of warnings: yellow) again. This is a simple, yet helpful improvement to always know what’s going on.
 
-- extend Xcode with Package Plugins, e.g. formatting with SwiftFormat
-    - invocation through project navigator
-    - can also be added in build phase
-- AppIcon
-    - double click on icon to select new one
-    - single-size feature to automatically create sizes from 1024px image
+We can now extend Xcode with Package Plugins, e.g. doing automatic formatting with `SwiftFormat`. These can either be added to the build phase but can also be invocated through the project navigator. It will be exciting to see what the community will come up with to extend functionality of Xcode for that.
+
+Another interesting feature is an AppIcon of a single-size. This needs a 1024x1024 pixel image and will auto-generate the rest of the required sizes. The icon can also simply changed by double-clicking on the icon and browsing through Finder to select a new one.
 
 ## Multiplatform development
 
