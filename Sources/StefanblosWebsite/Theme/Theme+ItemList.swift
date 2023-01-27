@@ -36,6 +36,8 @@ extension Node where Context == HTML.BodyContext {
             return .winspoolPage
         case .winspoolprivacy:
             return .winspoolPrivacyPage
+        case .swiftillionaire:
+            return .swiftillionairePage
         }
     }
     

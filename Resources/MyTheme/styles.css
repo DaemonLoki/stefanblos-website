@@ -30,23 +30,23 @@
 
 @font-face {
   font-family: Montserrat;
-  src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+  src: url(/fonts/Montserrat-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url(/fonts/Montserrat-Bold.ttf) format("truetype");
+  src: url(/fonts/Montserrat-Bold.ttf) format('truetype');
   font-weight: black;
 }
 
 @font-face {
   font-family: Poppins;
-  src: url(/fonts/Poppins-Regular.ttf) format("truetype");
+  src: url(/fonts/Poppins-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url(/fonts/Poppins-Bold.ttf) format("truetype");
+  src: url(/fonts/Poppins-Bold.ttf) format('truetype');
 }
 
 /**
@@ -195,7 +195,7 @@ nav li a.selected {
 
 .hero-section .intro-text::before {
   display: inline-block;
-  content: "";
+  content: '';
   width: 4rem;
   height: 0.25rem;
   margin-right: 1rem;
@@ -263,7 +263,7 @@ section h2 {
 
 section h2::before {
   display: inline-block;
-  content: "";
+  content: '';
   width: 2rem;
   height: 0.25rem;
   margin-right: 1rem;
@@ -407,16 +407,15 @@ h4 {
   border-radius: 50%;
   border: 2px solid var(--text-color);
   overflow: hidden;
-  
 }
 
 .post-head-image img {
-    object-fit: contain;
-    transition: transform .3s ease-out;
+  object-fit: contain;
+  transition: transform 0.3s ease-out;
 }
 
 .post-head-image:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .post-head p {
@@ -424,20 +423,20 @@ h4 {
 }
 
 .post-head a {
-    display: flex;
-    text-decoration: none;
-    font-size: larger;
+  display: flex;
+  text-decoration: none;
+  font-size: larger;
 }
 
 .post-head a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .post-head svg {
-    fill: var(--text-color);
-    width: 24px;
-    aspect-ratio: 1;
-    margin-left: 0.5rem;
+  fill: var(--text-color);
+  width: 24px;
+  aspect-ratio: 1;
+  margin-left: 0.5rem;
 }
 
 .post-image-gallery {
@@ -476,7 +475,7 @@ h4 {
 }
 
 .content h3 {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .content hr {
@@ -520,14 +519,14 @@ ol {
 }
 
 .content .rounded-video {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .content aside {
-    padding: 1rem;
-    border-left: 4px solid var(--accent-color);
-    margin-bottom: 2rem;
-    background: var(--card-background-color);
+  padding: 1rem;
+  border-left: 4px solid var(--accent-color);
+  margin-bottom: 2rem;
+  background: var(--card-background-color);
 }
 
 .small-image {
@@ -798,5 +797,215 @@ pre code .preprocessing {
 
   .experience-property li {
     margin-bottom: 20px;
+  }
+}
+
+/**
+ Swiftillionaire Page
+ */
+
+.swiftillionaire-hero-headline {
+  font-size: xxx-large;
+  text-align: center;
+}
+
+.underline-word {
+  text-decoration: underline;
+  text-decoration-color: rgba(248, 52, 35, 1);
+}
+
+.prominent-word {
+  color: rgba(248, 52, 35, 1);
+}
+
+.swiftillionaire-logo {
+  width: 24rem;
+  aspect-ratio: 1;
+  display: flex;
+  margin: 2rem auto;
+  filter: drop-shadow(0 0 0.75rem rgba(248, 52, 35, 0.4));
+}
+
+.swiftillionaire-image-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 0.8fr;
+  align-items: center;
+  gap: 4rem;
+  margin: 4rem 0;
+}
+
+.swiftillionaire-screenshot {
+  max-width: 90%;
+}
+
+.screenshot {
+  border-radius: 2rem;
+  border: 5px solid black;
+}
+
+.swiftillionaire-main-screenshot {
+  animation: imageFade 5s forwards;
+}
+
+.app-store-logo {
+  width: 10rem;
+  margin: 4rem auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.quote-text {
+  font-size: xx-large;
+  color: var(--text-color);
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+  display: block;
+  position: relative;
+}
+
+.quote-text::before {
+  content: '"';
+  font-size: 7rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgb(248, 52, 35);
+}
+
+.quote-person {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+.quote-name {
+  display: block;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.quote-description {
+  font-style: italic;
+}
+
+.quote-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.swiftillionaire-subheadline {
+  font-size: xxx-large;
+  display: flex;
+  margin: 3rem auto;
+  text-align: center;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.swiftillionaire-subheadline::before {
+  width: 0;
+  height: 0;
+  margin-right: 0;
+  transform: translateY(0);
+  background-color: clear;
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.feature-section img {
+  width: 60%;
+  position: relative;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.feature-section img::before {
+  position: absolute;
+  content: '';
+  width: 120%;
+  height: 120%;
+  background: blue;
+}
+
+.feature-img-shape {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-shape {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: rgb(248, 113, 49);
+  background: linear-gradient(
+    90deg,
+    rgba(248, 113, 49, 1) 0%,
+    rgba(248, 52, 35, 1) 100%
+  );
+  bottom: 4rem;
+  rotate: -10deg;
+  border-radius: 2rem;
+  z-index: -2;
+}
+
+.feature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-info h3 {
+  font-size: xx-large;
+}
+
+@keyframes imageFade {
+  from {
+    transform: rotate3d(1, 1, 0, 0deg);
+    box-shadow: 0;
+  }
+
+  to {
+    transform: rotate3d(0, 1, 0.1, 6deg);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+}
+
+@media (max-width: 768px) {
+  .swiftillionaire-image-grid {
+    display: none;
+  }
+
+  .feature-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .feature-info {
+    text-align: center;
+  }
+
+  .second-feature-section {
+    flex-direction: column-reverse;
   }
 }
